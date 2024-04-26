@@ -1,0 +1,61 @@
+:root {
+    --primary-color: rgba(57, 62, 70, 1);
+    --section-color: rgba(0, 178, 202, 0.28);
+    --button-color: #00B2CA;
+  }
+
+/* -------------------------------- */
+/* Página cursos */
+/* -------------------------------- */
+
+.Curso_container{
+    margin: 0;
+    padding: 0;
+  }
+  
+  .Curso_container h1{
+    color: var(--button-color);
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+  }
+  
+  .Title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px;
+    align-items: center;
+  }
+  
+  .Title h2 {
+    font-size: 24px;
+  }
+  
+  .Search {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    margin-top: 10px;
+  
+  }
+  
+  .Search form {
+    display: flex;
+    gap: 10px;
+    height: 24px;
+  }
+  
+  .Search input {
+    border-radius: 10px;
+    
+  }
+  
+  .Search button {
+    border-radius: 10px;
+  
+  }
+  
+  .Search p {
+    font-size: 18px;
+  }
