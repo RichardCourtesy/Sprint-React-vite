@@ -1,0 +1,251 @@
+/* #root é como se fosse o body do projeto (informação que pode ser útil) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --primary-color: #005fc5;
+  --hover-color: #89deff;
+  --button-color: #169bf3;
+  --button-color-hover: #1187d6;
+}
+
+* {
+  box-sizing: border-box !important;
+  text-decoration: none !important;
+}
+
+/* -------------------------------------------- */
+/* HEADER */
+/* -------------------------------------------- */
+
+header {
+  background-color: var(--primary-color);
+  display: inline-flex;
+  width: 100%;
+  height: 100px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.logo-div a {
+  display: inline-flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.logo-div img {
+  height: 50px;
+}
+
+.logo-div h1 {
+  /* background-color: red; */
+  color: white;
+  font-size: 27px;
+  transition: color 0.3s;
+}
+
+.logo-div h1:hover {
+  color: var(--hover-color);
+  transition: color 0.3s;
+}
+
+header nav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  list-style-type: none;
+  gap: 25px;
+  align-items: center;
+}
+
+header nav ul li a {
+  color: white;
+  font-size: 17px;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: var(--hover-color);
+  transition: color 0.3s;
+}
+
+
+/* -------------------------------- */
+/* FORMULÁRIO DE ADICIONAR CONTATO */
+/* -------------------------------- */
+
+.Div-add-users {
+  margin: 100px auto;
+  width: 30%;
+  height: fit-content;
+}
+
+.Div-add-users h1 {
+  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.form-add-user {
+  display: flex;
+  flex-direction: column;
+}
+
+#floatingTextarea2 {
+  height: 100px;
+}
+
+#button-register-user {
+  margin-top: 15px;
+  width: fit-content;
+  border: none;
+  outline: none;
+  background-color: var(--button-color);
+  color: white;
+  transition: background-color 0.3s;
+  padding: 7.5px;
+  border-radius: 5px;
+  font-size: 17.5px;
+}
+
+#button-register-user:hover {
+  background-color: var(--button-color-hover);
+  transition: background-color 0.3s;
+}
+
+.botao-voltar {
+  color: var(--button-color);
+  border: 1px solid var(--button-color);
+  padding: 10px;
+  border-radius: 7px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.botao-voltar:hover {
+  color: white;
+  background-color: var(--button-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* responsividade */
+@media (max-width: 1000px) {
+  .Div-add-users {
+    /* background-color: rgba(255, 0, 0, 0.137); */
+    /* margin: 100px auto; */
+    width: 75%;
+  }
+}
+
+/* -------------------------------- */
+/* TABELA NA PÁGINA INICIAL DE CONTATOS */
+/* -------------------------------- */
+
+.Home-page {
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.table-container {
+  height: 50vh;
+  overflow-y: auto;
+}
+
+.Tabela-contatos {
+  border-radius: 7.5px ;
+  overflow: hidden; /* serve para que a tabela fique redonda sem vazar o conteúdo para fora dela */
+  height: fit-content;
+}
+
+.Tabela-contatos thead, tfoot {
+  background-color: var(--button-color-hover);
+  color: white;
+}
+
+.Tabela-contatos tfoot {
+  height: 47.5px;
+}
+
+.Tabela-contatos thead tr th {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 12.5px 15px 12.5px 15px;
+}
+
+.Tabela-contatos tbody tr td {
+  padding: 10px 15px 10px 15px;
+  border-bottom: 1px solid rgb(179, 179, 179);
+}
+
+.msg-none-contacts {
+  font-size: 20px;
+  padding: 10px 15px 10px 15px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.action-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.delete {
+  background-color: rgb(255, 75, 75);
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.delete:hover {
+  background-color: rgb(255, 115, 115);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.edit {
+  background-color: rgb(15, 184, 0);
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.edit:hover {
+  background-color: rgb(19, 218, 1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.Error-page div {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  gap: 50px;
+
+}
+
+.Error-page div img {
+  height: 250px;
+}
+
+.Error-page section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.Error-page section a{
+  width: fit-content;
+}
