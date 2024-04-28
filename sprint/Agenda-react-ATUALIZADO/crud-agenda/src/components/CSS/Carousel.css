@@ -1,0 +1,14 @@
+.Slide-item {
+    display: flex;
+    width: 50%;
+    height: 50%;
+    object-fit: cover;
+    margin-left: 110px;
+}
+
+.Carousel-container {
+    background-color: var(--section-color);
+    padding: 20px;
+}
+
+

@@ -1,5 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
+
+import '../components/CSS/Carousel.css';
 import { Link } from "react-router-dom";
 
 // api do carousel || npm install swiper
@@ -21,6 +23,7 @@ import img5 from '../assets/img5.png';
 import img6 from '../assets/img6.png';
 import img7 from '../assets/img7.png';
 
+
 const data = [
     { id: '1', image: img1 },
     { id: '2', image: img2 },
@@ -28,15 +31,59 @@ const data = [
     { id: '4', image: img4 },
     { id: '5', image: img5 },
     { id: '6', image: img6 },
-    { id: '7', image: img7 }
+    { id: '7', image: img7 },
+    { id: '8', image: img1 },
+    { id: '9', image: img2 },
+    { id: '10', image: img3 },
+    { id: '11', image: img4 },
+    { id: '12', image: img5 },
+    { id: '13', image: img6 },
+    { id: '14', image: img7 },
+    { id: '15', image: img1 },
+    { id: '16', image: img2 },
+    { id: '17', image: img3 },
+    { id: '18', image: img4 },
+    { id: '19', image: img5 },
+    { id: '20', image: img6 },
+    { id: '21', image: img7 },
+    { id: '22', image: img1 },
+    { id: '23', image: img2 },
+    { id: '24', image: img3 },
+    { id: '25', image: img4 },
+    { id: '26', image: img5 },
+    { id: '27', image: img6 },
+    { id: '28', image: img7 }
 ]
 
-const Carousel = () => {
-  return (
 
+const Carousel = () => {
+
+    const [slidePerView, setSlidePerView] = useState(3);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if(window.innerWidth < 720) {
+                setSlidePerView(1);
+            } else {
+                setSlidePerView(2);
+            }
+    
+        };
+    
+        handleResize(); // Chame a função uma vez para definir o valor inicial
+    
+        window.addEventListener('resize', handleResize); // Adicione o listener de redimensionamento
+    
+        return () => {
+            window.removeEventListener('resize', handleResize); // Remova o listener quando o componente for desmontado
+        };
+    }, []); // Coloque um array vazio aqui para garantir que o useEffect só seja executado uma vez, equivalente ao componentDidMount
+    
+    return (
+        <div className='Carousel-container'>
     <Swiper
-        slidesPerView={1}
-        pagination={{ clickable: true }}
+        slidesPerView={slidePerView}
+        
         navigation
     >
         {data.map( (item) => (
@@ -51,18 +98,10 @@ const Carousel = () => {
             </SwiperSlide>
         )) }
     </Swiper>
-
-
-            // <img src={img1} alt="img1" />
-            // <img src={img2} alt="img2" />
-            // <img src={img3} alt="img3" />
-            // <img src={img4} alt="img4" />
-            // <img src={img5} alt="img5" />
-            // <img src={img6} alt="img6" />
-            // <img src={img7} alt="img7" />
-
-   
+</div>
   );
+
+  
 };
 
 export default Carousel;

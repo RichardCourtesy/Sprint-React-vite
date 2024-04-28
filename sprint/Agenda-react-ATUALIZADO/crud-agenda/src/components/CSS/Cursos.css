@@ -59,3 +59,15 @@
   .Search p {
     font-size: 18px;
   }
+
+  .Seus_cursos{
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+  }
+
+  .Recomend_cursos {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: column;
+  }
