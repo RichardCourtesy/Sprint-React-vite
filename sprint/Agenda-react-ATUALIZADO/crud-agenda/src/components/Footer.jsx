@@ -1,5 +1,4 @@
 import React from "react";
-import Backgraund from '../assets/logo.png'
 
 const Footer = () => {
     return (
@@ -20,13 +19,13 @@ const Footer = () => {
 
                 <div className="direito-fim">
                 <div className="Duv-icon">
-                    <a href="/"><i class="bi bi-book-half"> Mais Cursos</i></a>
+                    <a href="/Cursos"><i class="bi bi-book-half"> Mais Cursos</i></a>
                     <a href="/"> <i class="bi bi-telephone-fill"> Contatos</i></a>
                 </div>
 
-                <div className="Direitos">
-                <p>©All rights reserved</p>
-            </div>
+                
+                <p className="Direitos">©All rights reserved</p>
+            
         </div>
     </div>
 

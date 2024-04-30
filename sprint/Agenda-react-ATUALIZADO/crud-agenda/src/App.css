@@ -131,7 +131,7 @@ footer a:hover {
 .Direitos {
   display: flex;
   justify-content: end;
-  color: var(--white)
+  color: var(--white);
   
 }
 
