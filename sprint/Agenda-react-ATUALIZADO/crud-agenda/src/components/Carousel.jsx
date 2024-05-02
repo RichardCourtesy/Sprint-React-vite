@@ -85,10 +85,11 @@ const Carousel = () => {
         slidesPerView={slidePerView}
         
         navigation
+        
     >
         {data.map( (item) => (
 
-            <SwiperSlide key={item.id}>
+            <SwiperSlide key={item.id} >
                 <img
                     src={item.image}
                     alt="Slider"
