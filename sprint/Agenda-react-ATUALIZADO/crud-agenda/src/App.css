@@ -8,6 +8,7 @@
   --white: #fff;
 }
 
+
 * {
   box-sizing: border-box !important;
   text-decoration: none !important;
@@ -25,27 +26,33 @@ header {
   align-items: center;
   justify-content: space-around;
 }
-
-.logo-div a {
-  display: inline-flex;
-  gap: 15px;
+.logo-div {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
+.logo-div a {
+  display: inline-flex;
+  
+}
+
 .logo-div img {
-  height: 50px;
+  width: 93px;
+
+
 }
 
 .logo-div h1 {
-  /* background-color: red; */
   color: white;
   font-size: 27px;
-  transition: color 0.3s;
+  transition: color 0.5s;
+  margin-top: -18px;
 }
 
 .logo-div h1:hover {
-  color: var(--hover-color);
-  transition: color 0.3s;
+  color: var(--button-color);
+  transition: color 0.5s;
 }
 
 header nav ul {
@@ -71,17 +78,14 @@ header nav ul li a:hover {
 /* -------------------------------------------- */
 /* FOOTER */
 /* -------------------------------------------- */
-
 footer {
   background-image: url('./assets/Background.png');
   background-repeat: no-repeat;
-  background-size: 100% auto;
-  background: contain;
+  background-size: 100%;
 
   display: flex;
   width: 100%;
   justify-content: space-between;
-  height: 228px;
   
 }
 
@@ -95,9 +99,10 @@ footer a:hover {
 }
 
 .Redes {
-  display:flex;
-  margin: 10px;
+  display: inline-flex;
+  margin: 10px; 
   flex-direction: column;
+  
 }
 
 .Redes h1{
@@ -105,15 +110,17 @@ footer a:hover {
 }
 
 .Rede-icon {
-  display:flex;
-
+  display: inline-flex;
+  font-size: 4vh;
   flex-direction: column;
+  margin-top: 30px;
 }
 
 .Duvida {
   display:flex;
-  margin: 10px;
+  margin: 10px; 
   flex-direction: column;
+  
   
 }
 
@@ -125,6 +132,8 @@ footer a:hover {
   display:flex;
   flex-direction: column;
   align-items: end;
+  font-size: 4vh;
+  margin-top: 30px;
 
 }
 
@@ -132,31 +141,16 @@ footer a:hover {
   display: flex;
   justify-content: end;
   color: var(--white);
+  margin: 0;
   
 }
 
 .direito-fim {
   display: flex;
   flex-direction: column;
-  gap: 81px;
+  gap: 35vh;
   
 }
-
-
-/* -------------------------------- */
-/* TABELA NA PÁGINA INICIAL DE CONTATOS */
-/* -------------------------------- */
-
-
-/* -------------------------------- */
-/* TABELA NA PÁGINA INICIAL DE CONTATOS */
-/* -------------------------------- */
-
-
-/* -------------------------------- */
-/* TABELA NA PÁGINA INICIAL DE CONTATOS */
-/* -------------------------------- */
-
 
 /* -------------------------------- */
 /* PÁGINA DE ERRO */

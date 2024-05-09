@@ -4,13 +4,20 @@
     --button-color: #00B2CA;
   }
 
+*{
+  margin: 0;
+  padding: 0;
+}
+
 /* -------------------------------- */
 /* Página cursos */
 /* -------------------------------- */
 
 .Curso_container{
-    margin: 0;
-    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    
   }
   
   .Curso_container h1{
@@ -62,12 +69,12 @@
 
   .Seus_cursos{
     display: flex;
-    margin-top: 100px;
     flex-direction: column;
   }
 
   .Recomend_cursos {
     display: flex;
-    margin-top: 100px;
     flex-direction: column;
+    margin-top: -20lvh;
   }
+

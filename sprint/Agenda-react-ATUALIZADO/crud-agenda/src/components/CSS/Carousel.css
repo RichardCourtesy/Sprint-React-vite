@@ -2,10 +2,13 @@
     display: flex;
     width: 50vh;
     object-fit: cover;
+    margin-left: 27vh;
 }
 
 .Carousel-container {
     background-color: var(--section-color); 
+    margin-bottom: 18vh;
+    padding: 0;
 }
 
 .swiper-slide img {

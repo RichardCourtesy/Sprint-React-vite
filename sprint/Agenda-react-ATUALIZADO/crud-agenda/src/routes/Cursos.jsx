@@ -38,7 +38,9 @@ const Cursos = () => {
                             </form> 
                     </div>
                 </div>
-                     <Carousel /> 
+                <div className="carousel2">
+                     <Carousel />
+                     </div>
             </section>
         </main>
     );
