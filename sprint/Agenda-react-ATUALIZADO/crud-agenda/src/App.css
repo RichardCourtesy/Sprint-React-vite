@@ -8,10 +8,7 @@
   --white: #fff;
 }
 
-* {
-  box-sizing: border-box !important;
-  text-decoration: none !important;
-}
+
 
 /* -------------------------------------------- */
 /* HEADER */
@@ -95,7 +92,7 @@ footer a:hover {
 }
 
 .Redes {
-  display:flex;
+
   margin: 10px;
   flex-direction: column;
 }
