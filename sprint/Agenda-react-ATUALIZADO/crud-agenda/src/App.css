@@ -78,23 +78,23 @@ header nav ul li a:hover {
 /* -------------------------------------------- */
 /* FOOTER */
 /* -------------------------------------------- */
-footer {
+.footer {
   background-image: url('./assets/Background.png');
   background-repeat: no-repeat;
-  background-size: 100%;
-
+  background-size: cover;
+  background-position: center;
+  
   display: flex;
-  width: 100%;
   justify-content: space-between;
   
 }
 
-footer a {
+.footer a {
   color: var(--white);
   transition: color 0.5s;
 }
 
-footer a:hover {
+.footer a:hover {
   color: var(--button-color)
 }
 
@@ -102,7 +102,7 @@ footer a:hover {
   display: inline-flex;
   margin: 10px; 
   flex-direction: column;
-  
+  gap: 30px;
 }
 
 .Redes h1{
@@ -113,14 +113,13 @@ footer a:hover {
   display: inline-flex;
   font-size: 4vh;
   flex-direction: column;
-  margin-top: 30px;
 }
 
 .Duvida {
   display:flex;
   margin: 10px; 
   flex-direction: column;
-  
+  gap: 30px;
   
 }
 
@@ -133,7 +132,7 @@ footer a:hover {
   flex-direction: column;
   align-items: end;
   font-size: 4vh;
-  margin-top: 30px;
+  
 
 }
 
@@ -141,14 +140,7 @@ footer a:hover {
   display: flex;
   justify-content: end;
   color: var(--white);
-  margin: 0;
-  
-}
 
-.direito-fim {
-  display: flex;
-  flex-direction: column;
-  gap: 35vh;
   
 }
 
