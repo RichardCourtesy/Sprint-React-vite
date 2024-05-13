@@ -1,4 +1,5 @@
 import React from "react";
+import logo from '../assets/logoSF.png';
 
 const Footer = () => {
     return (
@@ -10,6 +11,14 @@ const Footer = () => {
                     <a href="/">Instagram <i className="bi bi-instagram"></i></a>
                     <a href="/">Facebook <i className="bi bi-facebook"></i></a>
                     <a href="/">X  <i className="bi bi-twitter-x"></i></a>
+                </div>
+            </div>
+
+            <div className="Impresa">
+                <img src={logo } alt='' />
+                <div className="Impresa_text">
+                <h1>Brainboosters</h1>
+                <p>Conhecimento é poder, torne-se poderoso aqui na BrainBoosters</p>
                 </div>
             </div>
 

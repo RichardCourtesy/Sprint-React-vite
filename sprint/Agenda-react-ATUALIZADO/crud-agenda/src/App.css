@@ -22,14 +22,20 @@ header {
   background-color: var(--primary-color);
   display: inline-flex;
   width: 100%;
-  height: 100px;
+  height: 115px;
   align-items: center;
   justify-content: space-around;
 }
+
+/* -------------------------------------------- */
+/* SECTION_1 */
+/* -------------------------------------------- */
+
 .logo-div {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 }
 
 .logo-div a {
@@ -38,22 +44,39 @@ header {
 }
 
 .logo-div img {
-  width: 93px;
-
-
+  width: 80px;
 }
+
+.imagens{ 
+  position: relative;
+}
+
+.logo-imghv {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+ .logo-imghv:hover {
+  opacity: 1;
+  transition: opacity 0.5s;
+} 
+
 
 .logo-div h1 {
   color: white;
   font-size: 27px;
   transition: color 0.5s;
-  margin-top: -18px;
 }
 
 .logo-div h1:hover {
   color: var(--button-color);
   transition: color 0.5s;
 }
+
+/* -------------------------------------------- */
+/* SECTION_2_3 */
+/* -------------------------------------------- */
 
 header nav ul {
   margin: 0 !important;
@@ -66,7 +89,7 @@ header nav ul {
 
 header nav ul li a {
   color: var(--button-color);
-  font-size: 17px;
+  font-size: 27px;
   transition: color 0.5s;
 }
 
@@ -79,7 +102,7 @@ header nav ul li a:hover {
 /* FOOTER */
 /* -------------------------------------------- */
 .footer {
-  background-image: url('./assets/Background.png');
+  background-color: var(--primary-color);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -98,6 +121,10 @@ header nav ul li a:hover {
   color: var(--button-color)
 }
 
+/* -------------------------------------------- */
+/* SECTION_1 */
+/* -------------------------------------------- */
+
 .Redes {
   display: inline-flex;
   margin: 10px; 
@@ -114,6 +141,31 @@ header nav ul li a:hover {
   font-size: 4vh;
   flex-direction: column;
 }
+
+/* -------------------------------------------- */
+/* SECTION_2 */
+/* -------------------------------------------- */
+
+.Impresa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Impresa_text {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Impresa_text p {
+  font-size: 25px;
+}
+/* -------------------------------------------- */
+/* SECTION_3 */
+/* -------------------------------------------- */
 
 .Duvida {
   display:flex;
