@@ -2,7 +2,7 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import error_img from '../assets/error-img.png'
+import error_img from '../assets/errorBrain-img.png'
 
 const ErrorPage = () => {
     return (
