@@ -23,7 +23,9 @@ const Home = () => {
     return (
         <main className='Home-page'>
             <section className='slide-banner'>
-                f
+                <div className="slide_show">
+                    
+                </div>
             </section>
         </main>
     );
