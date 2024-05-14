@@ -57,22 +57,27 @@ header {
   transition: opacity 0.5s ease;
 }
 
- .logo-imghv:hover {
+.logo-div:hover .logo-imghv {
   opacity: 1;
   transition: opacity 0.5s;
-} 
+  transform: scale(1.1);
+}
 
+.logo-div:hover .logo-logo {
+  transform: scale(1.1);
+}
 
 .logo-div h1 {
-  color: white;
+  color: var(--white);
   font-size: 27px;
   transition: color 0.5s;
 }
 
-.logo-div h1:hover {
+ .logo-div:hover h1 {
   color: var(--button-color);
   transition: color 0.5s;
-}
+  transform: scale(1.1);
+} 
 
 /* -------------------------------------------- */
 /* SECTION_2_3 */
@@ -80,7 +85,7 @@ header {
 
 header nav ul {
   margin: 0 !important;
-  padding: 0 !important;
+
   display: flex;
   list-style-type: none;
   gap: 25px;
@@ -98,6 +103,9 @@ header nav ul li a:hover {
   transition: color 0.5s;
 }
 
+header nav ul li:hover {
+  transform: scale(1.1);
+}
 /* -------------------------------------------- */
 /* FOOTER */
 /* -------------------------------------------- */
