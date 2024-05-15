@@ -2,8 +2,10 @@ import React, { useRef, useState, useEffect } from 'react';
 
 
 import '../components/CSS/Carousel.css';
+import { Link } from "react-router-dom";
 
 // api do carousel || npm install swiper
+import { register } from 'swiper/element/bundle'
 import { Swiper, SwiperSlide} from 'swiper/react'
 
 //Módulos da api
@@ -53,6 +55,7 @@ const data = [
     { id: '28', image: img7 }
 ]
 
+register();
 
 const Carousel = () => {
 
