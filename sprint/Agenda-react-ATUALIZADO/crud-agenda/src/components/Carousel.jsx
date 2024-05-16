@@ -91,11 +91,14 @@ const Carousel = () => {
         {data.map( (item) => (
 
             <SwiperSlide key={item.id} >
+                <div className="Slide-item">
                 <img
                     src={item.image}
                     alt="Slider"
-                    className="Slide-item"
+                    className='carousel-image'
                 />
+                
+                </div>
 
             </SwiperSlide>
         )) }

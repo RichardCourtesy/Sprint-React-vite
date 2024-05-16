@@ -31,8 +31,13 @@ const Home = () => {
             <section className='slide-banner'>
 
                 <div className="slide_show">
-                    <Carousel_home images={images} />
+                    <Carousel_home images={images}/>
                     
+                </div>
+
+                <div className="text_slide">
+                    <h1>Explore mais cursos<br />Vá além!</h1>
+                    <button>Descubra mais</button>
                 </div>
             </section>
         </main>

@@ -1,0 +1,22 @@
+:root {
+    --button-color: #00B2CA;
+    --white: #fff;
+  }
+
+.carousel-image {
+    width: 100%; /* Ajusta a largura das imagens ao tamanho do contêiner */
+    height: auto; /* Mantém a proporção das imagens */
+    max-height: 471px; /* Define uma altura máxima, você pode ajustar conforme necessário */
+    object-fit: cover; /* Opcional: ajusta como a imagem deve ser redimensionada para caber no contêiner */
+  }
+
+.carousel .thumb.selected, .carousel .thumb:hover{
+    border: 3px solid var(--button-color) !important;
+}
+
+.thumbs {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

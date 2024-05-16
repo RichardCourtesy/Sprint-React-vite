@@ -11,8 +11,9 @@
     padding: 0;
 }
 
-.swiper-slide img {
-    display: flex;
-    
-
-}
+.carousel-image {
+    width: 100%; /* Ajusta a largura das imagens ao tamanho do contêiner */
+    height: auto; /* Mantém a proporção das imagens */
+    max-height: 400px; /* Define uma altura máxima, você pode ajustar conforme necessário */
+    object-fit: cover; /* Opcional: ajusta como a imagem deve ser redimensionada para caber no contêiner */
+  }

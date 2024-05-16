@@ -258,3 +258,15 @@ header nav ul li:hover {
   margin: 8vh;
 
 }
+
+.text_slide {
+  background-color: var(--white);
+  display: flex;
+  height: 12vh;
+  flex-direction: column;
+  
+}
+
+.text_slide buttom {
+  display: flex;
+}
