@@ -247,3 +247,14 @@ header nav ul li:hover {
   width: 100%;
   height: 100vh;
 }
+
+/* -------------------------------- */
+/* Slide */
+/* -------------------------------- */
+
+.slide_show {
+  display: flex;
+  width: 120vh ;
+  margin: 8vh;
+
+}

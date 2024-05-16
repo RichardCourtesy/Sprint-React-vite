@@ -29,11 +29,10 @@ const Home = () => {
     return (
         <main className='Home-page'>
             <section className='slide-banner'>
-            <h1>Meu Slideshow</h1>
-            <Carousel_home images={images} />
 
                 <div className="slide_show">
-
+                    <Carousel_home images={images} />
+                    
                 </div>
             </section>
         </main>
