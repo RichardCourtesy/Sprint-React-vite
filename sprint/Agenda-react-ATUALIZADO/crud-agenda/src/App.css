@@ -5,6 +5,7 @@
   --primary-color: rgba(57, 62, 70, 1);
   --section-color: rgba(0, 178, 202, 0.28);
   --button-color: #00B2CA;
+  --button-color-transparent: #00b2ca9e;
   --white: #fff;
 }
 
@@ -263,17 +264,38 @@ header nav ul li:hover {
 }
 
 .text_slide {
-  background-color: var(--button-color);
+  background-color: var(--button-color-transparent) ;
   display: flex;
   flex-direction: column;
-  margin:auto ;
-  gap: 40vh;
+  justify-content: space-between;
+  margin: 10vh;
+  width: 60vh;
+  gap: 10vh;
   padding: 10px;
-  border: 3px solid var(--button-color);
   border-radius: 10px;
   color: #fff;
 }
 
-.text_slide buttom {
+.textinho {
+  font-size: 25px;
+  font-weight: 700; /*grossura do texto*/
+ /* line-height: 43px; espaço entre linhas*/
+ text-align: justify;
+}
 
+.btn {
+  color: #fff;
+  border: solid #fff;
+  font-size: 25px;
+  transition: 0.5s;
+  font-weight: 700;
+  transform: scale(0.9);
+}
+
+.btn:hover {
+  border: solid #00B2CA;
+  color: #00B2CA;
+  background-color: #fff;
+  transition: 0.5s;
+  transform: scale(1.0);
 }
