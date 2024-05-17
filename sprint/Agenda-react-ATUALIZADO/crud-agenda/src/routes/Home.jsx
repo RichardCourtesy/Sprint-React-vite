@@ -36,7 +36,7 @@ const Home = () => {
                 </div>
 
                 <div className="text_slide">
-                    <h1>Explore mais cursos<br />Vá além!</h1>
+                    <h1>Explore mais cursos.<br />Vá além!</h1>
                     <button>Descubra mais</button>
                 </div>
             </section>
