@@ -258,9 +258,9 @@ header nav ul li:hover {
 
 .slide_show {
   display: flex;
-  width: 120vh ;
+  width: 122vh ;
   margin: 8vh;
-
+  
 }
 
 .text_slide {
@@ -289,7 +289,8 @@ header nav ul li:hover {
   font-size: 25px;
   transition: 0.5s;
   font-weight: 700;
-  transform: scale(0.9);
+  display: inline-block;
+  margin: 0 4vh;
 }
 
 .btn:hover {
@@ -297,5 +298,5 @@ header nav ul li:hover {
   color: #00B2CA;
   background-color: #fff;
   transition: 0.5s;
-  transform: scale(1.0);
+  transform: scale(1.1);
 }
