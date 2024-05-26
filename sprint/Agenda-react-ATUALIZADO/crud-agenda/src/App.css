@@ -300,3 +300,17 @@ header nav ul li:hover {
   transition: 0.5s;
   transform: scale(1.1);
 }
+
+/* -------------------------------- */
+/* Enviar Comentario */
+/* -------------------------------- */
+
+.Comment-enviar {
+  display: flex;
+  /* background-color: red; */
+}
+
+.Comment-enviar input {
+  margin: 10px;
+
+}

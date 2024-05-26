@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import ReviewsList from '../components/ReviewsList.jsx';
 import SubmitReview from '../components/SubmitReview.jsx';
 
+import Estrelas from '../components/Estrelas'
+
 import imagem1 from "../assets/curso_1.png";
 import imagem2 from "../assets/curso_2.png";
 import imagem3 from "../assets/curso_3.png";
@@ -29,11 +31,14 @@ const Home = () => {
                 </div>
             </section>
 
-            <section className="comments">
-            <div>
-                <h1>Bem-vindo ao nosso site!</h1>
+            <section className="Comment-section">
+            <div className='Comment-enviar'>
                     <SubmitReview />
-                    <ReviewsList />
+            </div>
+
+            <div className='Comment-exibir'>
+                <ReviewsList />
+
             </div>
             </section>
         </main>

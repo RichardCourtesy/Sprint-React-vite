@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
+import "../App.css"
+
+import Estrelas from '../components/Estrelas'
 
 const SubmitReview = () => {
   const [rating, setRating] = useState(0);
@@ -56,17 +59,12 @@ const SubmitReview = () => {
             />
         </label>
         <br />
-      <label>
-        Nota:
-        <select value={rating} onChange={(e) => setRating(e.target.value)}>
-          <option value="0">0</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-        </select>
-      </label>
+        <label>
+            <p>Avaliação: {rating} Estrelas</p>
+            <Estrelas rating={rating} setRating={setRating} />     
+        </label>
+
+
       <br />
       <label>
         Comentário:
