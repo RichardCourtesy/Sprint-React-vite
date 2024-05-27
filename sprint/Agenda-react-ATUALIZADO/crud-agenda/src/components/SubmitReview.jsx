@@ -40,7 +40,7 @@ const SubmitReview = () => {
     <form onSubmit={handleSubmit}>
       <h2>Deixe sua Avaliação</h2>
         <label>
-            Nome:
+            <p>Nome:</p>
             <input 
             type="text"
             value={name}
@@ -50,7 +50,7 @@ const SubmitReview = () => {
         </label>
         <br />
         <label>
-            Email:
+            <p>Email:</p>
             <input 
             type="email"
             value={email}
@@ -67,14 +67,17 @@ const SubmitReview = () => {
 
       <br />
       <label>
-        Comentário:
+        <p>Comentário:</p>
         <textarea
             value={comment}
             onChange={(e) => setComment(e.target.value)} 
         />
       </label>
       <br />
-      <button type="submit">Enviar</button>
+      
+      <div className='caixa-enviar'>
+        <button type="submit" className='enviar'>Enviar</button>
+      </div>
     </form>
   );
 };

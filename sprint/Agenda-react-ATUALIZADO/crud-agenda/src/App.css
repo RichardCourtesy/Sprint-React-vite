@@ -285,32 +285,80 @@ header nav ul li:hover {
 
 .btn {
   color: #fff;
-  border: solid #fff;
-  font-size: 25px;
+  border: 3px solid #fff  !important;
+  font-size: 25px !important;
   transition: 0.5s;
-  font-weight: 700;
   display: inline-block;
   margin: 0 4vh;
 }
 
 .btn:hover {
-  border: solid #00B2CA;
+  border:  solid #00B2CA;
   color: #00B2CA;
-  background-color: #fff;
+  color: #fff ;
   transition: 0.5s;
-  transform: scale(1.1);
+  transform: scale(1.2);
 }
 
 /* -------------------------------- */
 /* Enviar Comentario */
 /* -------------------------------- */
 
-.Comment-enviar {
+.Comment-section {
   display: flex;
-  /* background-color: red; */
+  flex-direction: column;
+  gap: 10vh;
+  background-color: var(--primary-color);
+} 
+
+ .Comment-enviar {
+  display: flex;
+  background-color: #00B2CA; 
+  width: fit-content;
+  border: 3px solid #fff;
+  border-radius: 14px;
+} 
+
+ .Comment-enviar input {
+  border-radius: 8px;
+
 }
 
-.Comment-enviar input {
+.Comment-enviar label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  
+}
+
+.Comment-enviar button {
+  display: flex;
+  justify-content: center;
+  
+}
+
+.caixa-enviar {
+  display: flex;
+  border-radius: 30px;
+  justify-content: center;
+}
+
+.enviar {
+  border-radius: 10px;
+  width: 18vh;
   margin: 10px;
+  border: solid #fff;
+  color: #fff;
+  background-color: #00B2CA;
+  font-size: 25px;
+  transition: 0.5s;
+  display: inline-block;
+}
+
+.enviar:hover {
+  background-color: #fff;
+  color: #00B2CA;
+  transition: 0.5s;
+  transform: scale(1.2);
 
 }
