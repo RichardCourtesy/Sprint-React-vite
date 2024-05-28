@@ -1,4 +1,3 @@
-// SubmitReview.js //ele envia os dados para o banco
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
@@ -9,19 +8,18 @@ import Estrelas from '../components/Estrelas'
 const SubmitReview = () => {
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState('');
-  const [name, setName] =  useState('');
-  const [email, setEmail] =  useState('');
-
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [remainingChars, setRemainingChars] = useState(250);
 
   const handleSubmit = async (e) => {
-
     e.preventDefault();
     if (rating === 0 || !comment || !name || !email) {
       alert("Todos os campos são obrigatórios!");
       return;
-    }   //torna obrigatório enviar todos os campos
+    }
 
-    e.preventDefault();
+
     await addDoc(collection(db, 'reviews'), {
       rating: rating,
       comment: comment,
@@ -36,51 +34,57 @@ const SubmitReview = () => {
     setEmail('');
   };
 
+  const handleCommentChange = (e) => {
+    const value = e.target.value;
+    setComment(value);
+    setRemainingChars(250 - value.length);
+  };
+
   return (
     <form onSubmit={handleSubmit}>
-      <h2>Deixe sua Avaliação</h2>
+      <div className="container-form-enviar">
+        <h2>Deixe sua Avaliação</h2>
         <label>
-            <p>Nome:</p>
-            <input 
+          <p>Nome:</p>
+          <input
             type="text"
             value={name}
-            onChange={(e) => setName(e.target.value)} 
+            onChange={(e) => setName(e.target.value)}
             required
-            />
+          />
         </label>
-        <br />
         <label>
-            <p>Email:</p>
-            <input 
+          <p>Email:</p>
+          <input
             type="email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)} 
+            onChange={(e) => setEmail(e.target.value)}
             required
-            />
+          />
         </label>
-        <br />
         <label>
-            <p>Avaliação: {rating} Estrelas</p>
-            <Estrelas rating={rating} setRating={setRating} />     
+          <p>Avaliação: {rating} Estrelas</p>
+          <Estrelas rating={rating} setRating={setRating} />
         </label>
-
-
-      <br />
-      <label>
-        <p>Comentário:</p>
-        <textarea
+        <label>
+          <p>Comentário:</p>
+          <textarea
+            name="comentario"
+            placeholder="Digite seu comentário..."
+            maxLength={250}
             value={comment}
-            onChange={(e) => setComment(e.target.value)} 
-        />
-      </label>
-      <br />
-      
-      <div className='caixa-enviar'>
-        <button type="submit" className='enviar'>Enviar</button>
+            onChange={handleCommentChange}
+            className='comentario'
+          />
+          <p>{remainingChars} caracteres restantes</p>
+        </label>
+        <div className='caixa-enviar'>
+          <button type="submit" className='enviar'>Enviar</button>
+        </div>
       </div>
+
     </form>
   );
 };
 
 export default SubmitReview;
-

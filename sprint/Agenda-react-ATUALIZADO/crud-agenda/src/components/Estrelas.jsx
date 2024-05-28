@@ -48,7 +48,7 @@ const StarRating = ({ rating, setRating }) => {
             onMouseOver={() => handleMouseOver(starValue)}
             onMouseLeave={handleMouseLeave}
             onClick={() => handleClick(starValue)}
-            style={{ cursor: 'pointer', color: (hoverRating >= starValue || rating >= starValue) ? 'yellow' : 'gray' }}
+            style={{ cursor: 'pointer', color: (hoverRating >= starValue || rating >= starValue) ? 'yellow' : 'white' }}
           >
             <FontAwesomeIcon icon={renderStar(starValue)} />
           </span>

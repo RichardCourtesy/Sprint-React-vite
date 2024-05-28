@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from './firebaseConfig';
+import '../App.css';
 
 const ReviewsList = () => {
   const [reviews, setReviews] = useState([]);
@@ -17,14 +18,18 @@ const ReviewsList = () => {
   }, []);
 
   return (
-    <div>
+    <div className='ler'>
       <h2>Avaliações</h2>
       {reviews.map((review, index) => (
-        <div key={index}>
+        <div key={index} className='form-ler'>
             <p>Nome: {review.name}</p>
             <p>Email: {review.email}</p>
           <p>Nota: {review.rating} estrelas</p>
-          <p>Comentário: {review.comment}</p>
+          <div className='ler-comentario'>
+          <p >Comentário: {review.comment} </p>
+        
+          </div>
+
         </div>
       ))}
     </div>

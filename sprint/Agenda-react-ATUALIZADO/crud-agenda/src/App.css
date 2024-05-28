@@ -306,46 +306,67 @@ header nav ul li:hover {
 
 .Comment-section {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10vh;
   background-color: var(--primary-color);
 } 
 
  .Comment-enviar {
   display: flex;
-  background-color: #00B2CA; 
-  width: fit-content;
+  background-color: var(--button-color-transparent); 
+  width: 40%;
   border: 3px solid #fff;
   border-radius: 14px;
+  margin: 8vh;
+
 } 
+
+.container-form-enviar{
+  display: flex;
+  margin: 6vh;
+  flex-direction: column;
+  gap: 10px;
+}
 
  .Comment-enviar input {
   border-radius: 8px;
-
+  border: solid #fff;
+  width: 67vh;
+  font-size: 24px;
 }
 
 .Comment-enviar label {
   display: flex;
-  align-items: center;
-  gap: 5px;
+  align-items:start ;
+  flex-direction: column;
+}
+
+.Comment-enviar h2 {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 4vh;
   
 }
 
-.Comment-enviar button {
+.Comment-enviar p {
   display: flex;
   justify-content: center;
+  color: #fff;
+  font-size: 22px;
   
 }
 
 .caixa-enviar {
   display: flex;
-  border-radius: 30px;
   justify-content: center;
+  margin: 5vh;
+  
 }
 
 .enviar {
-  border-radius: 10px;
-  width: 18vh;
+  border-radius: 8px;
+  width: 29vh;
   margin: 10px;
   border: solid #fff;
   color: #fff;
@@ -353,6 +374,7 @@ header nav ul li:hover {
   font-size: 25px;
   transition: 0.5s;
   display: inline-block;
+  
 }
 
 .enviar:hover {
@@ -361,4 +383,70 @@ header nav ul li:hover {
   transition: 0.5s;
   transform: scale(1.2);
 
+}
+
+.comentario {
+  display: flex;
+  width: 100%;
+  height: 25vh;
+  border-radius: 8px;
+  border: solid #00B2CA;
+  font-size: 30px;
+  resize: none;
+}
+
+/* -------------------------------- */
+/* Ler Comentario */
+/* -------------------------------- */
+
+   .Comment-exibir {
+  display: flex;
+  background-color: var(--button-color-transparent); 
+  width: 100%;
+  height: 20%;
+  border: 3px solid #fff;
+  border-radius: 14px;
+  margin: 8vh;
+  align-items:start ;
+  flex-direction: column;
+  overflow: hidden; 
+}
+
+.Comment-exibir h2 {
+  display: flex;
+  font-size: 5vh;
+  color: #fff;
+}
+
+.form-ler  {
+  display: flex;
+  color: #fff;
+  font-size: 25px;
+  flex-direction: column;
+} 
+
+.form-ler {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 3px solid #fff;
+  border-radius: 5px;
+}
+
+.ler-comentario p {
+  display: flex;
+  max-width: 70%;
+  overflow: hidden;
+  overflow: scroll;
+}
+
+.ler-comentario  {
+  display: flex;
+  max-width: 20%;
+  
+}
+
+.ler {
+  overflow: hidden;
+  height: 124vh;
+  overflow: scroll;
 }
