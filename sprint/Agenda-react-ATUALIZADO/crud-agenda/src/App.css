@@ -306,7 +306,7 @@ header nav ul li:hover {
 
 .Comment-section {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   gap: 10vh;
   background-color: var(--primary-color);
 } 
@@ -402,14 +402,9 @@ header nav ul li:hover {
    .Comment-exibir {
   display: flex;
   background-color: var(--button-color-transparent); 
-  width: 100%;
-  height: 20%;
   border: 3px solid #fff;
   border-radius: 14px;
   margin: 8vh;
-  align-items:start ;
-  flex-direction: column;
-  overflow: hidden; 
 }
 
 .Comment-exibir h2 {
@@ -419,10 +414,8 @@ header nav ul li:hover {
 }
 
 .form-ler  {
-  display: flex;
   color: #fff;
   font-size: 25px;
-  flex-direction: column;
 } 
 
 .form-ler {
@@ -432,17 +425,9 @@ header nav ul li:hover {
   border-radius: 5px;
 }
 
-.ler-comentario p {
-  display: flex;
-  max-width: 70%;
-  overflow: hidden;
-  overflow: scroll;
-}
-
 .ler-comentario  {
-  display: flex;
-  max-width: 20%;
-  
+    display: flex;
+  max-width: 10% ;
 }
 
 .ler {

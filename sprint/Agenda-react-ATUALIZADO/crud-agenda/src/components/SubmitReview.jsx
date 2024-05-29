@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
-import "../App.css"
+import '../App.css';
 
-import Estrelas from '../components/Estrelas'
+import Estrelas from '../components/Estrelas';
 
 const SubmitReview = () => {
   const [rating, setRating] = useState(0);
@@ -14,24 +14,32 @@ const SubmitReview = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (rating === 0 || !comment || !name || !email) {
-      alert("Todos os campos são obrigatórios!");
-      return;
+
+    // // Validação dos campos obrigatórios
+    // if (rating === 0 || !comment || !name || !email) {
+    //   alert('Todos os campos são obrigatórios!');
+    //   return;
+    // }
+
+    try {
+      // Adicionando a avaliação ao Firestore
+      await addDoc(collection(db, 'reviews'), {
+        rating,
+        comment,
+        name,
+        email,
+        timestamp: new Date()
+      });
+
+      // Resetando os campos após o envio
+      setRating(0);
+      setComment('');
+      setName('');
+      setEmail('');
+      setRemainingChars(250);
+    } catch (error) {
+      console.error('Erro ao enviar a avaliação: ', error);
     }
-
-
-    await addDoc(collection(db, 'reviews'), {
-      rating: rating,
-      comment: comment,
-      name: name,
-      email: email,
-      timestamp: new Date()
-    });
-
-    setRating(0);
-    setComment('');
-    setName('');
-    setEmail('');
   };
 
   const handleCommentChange = (e) => {
@@ -50,7 +58,7 @@ const SubmitReview = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            required
+            // required
           />
         </label>
         <label>
@@ -59,7 +67,7 @@ const SubmitReview = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            required
+            // required
           />
         </label>
         <label>
@@ -74,15 +82,15 @@ const SubmitReview = () => {
             maxLength={250}
             value={comment}
             onChange={handleCommentChange}
-            className='comentario'
+            className="comentario"
+            // required
           />
           <p>{remainingChars} caracteres restantes</p>
         </label>
-        <div className='caixa-enviar'>
-          <button type="submit" className='enviar'>Enviar</button>
+        <div className="caixa-enviar">
+          <button type="submit" className="enviar">Enviar</button>
         </div>
       </div>
-
     </form>
   );
 };

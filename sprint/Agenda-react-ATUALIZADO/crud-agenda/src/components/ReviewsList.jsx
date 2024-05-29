@@ -25,10 +25,9 @@ const ReviewsList = () => {
             <p>Nome: {review.name}</p>
             <p>Email: {review.email}</p>
           <p>Nota: {review.rating} estrelas</p>
-          <div className='ler-comentario'>
-          <p >Comentário: {review.comment} </p>
+          <p className='ler-comentario'>Comentário: {review.comment} </p>
         
-          </div>
+          
 
         </div>
       ))}
