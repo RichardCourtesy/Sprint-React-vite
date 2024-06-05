@@ -435,3 +435,56 @@ header nav ul li:hover {
   height: 124vh;
   overflow: scroll;
 }
+
+/* -------------------------------- */
+/* Criadores */
+/* -------------------------------- */
+
+.Criadores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.pessoas {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.foto-user {
+  width: 35vh;
+  border: 3px solid #fff;
+  border-radius: 20px;
+}
+
+.funcao {
+  font-size: 34px;
+}
+
+/* -------------------------------- */
+/* Página de Login*/
+/* -------------------------------- */
+
+.Login-page {
+  display: flex;
+}
+
+.Login {
+  background-color: var(--button-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.Login li {
+  list-style: none;
+}
