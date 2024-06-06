@@ -306,32 +306,27 @@ header nav ul li:hover {
 
 .Comment-section {
   display: flex;
-  flex-direction: column;
-  gap: 10vh;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: var(--primary-color);
 } 
 
- .Comment-enviar {
+.Comment-enviar {
   display: flex;
   background-color: var(--button-color-transparent); 
-  width: 40%;
+  width: 70vh;
   border: 3px solid #fff;
   border-radius: 14px;
   margin: 8vh;
-
-} 
-
-.container-form-enviar{
-  display: flex;
-  margin: 6vh;
   flex-direction: column;
   gap: 10px;
+  height: 110vh;
 }
 
  .Comment-enviar input {
   border-radius: 8px;
   border: solid #fff;
-  width: 67vh;
+  width: 90%;
   font-size: 24px;
 }
 
@@ -339,6 +334,7 @@ header nav ul li:hover {
   display: flex;
   align-items:start ;
   flex-direction: column;
+  margin-left: 5vh;
 }
 
 .Comment-enviar h2 {
@@ -387,7 +383,7 @@ header nav ul li:hover {
 
 .comentario {
   display: flex;
-  width: 100%;
+  width: 90%;
   height: 25vh;
   border-radius: 8px;
   border: solid #00B2CA;
@@ -398,42 +394,35 @@ header nav ul li:hover {
 /* -------------------------------- */
 /* Ler Comentario */
 /* -------------------------------- */
-
-   .Comment-exibir {
-  display: flex;
+.ler {
   background-color: var(--button-color-transparent); 
   border: 3px solid #fff;
   border-radius: 14px;
   margin: 8vh;
+  height: 110vh;
+  overflow: scroll ;
+  width: 50%;
 }
 
-.Comment-exibir h2 {
-  display: flex;
+.Comment-exibir {
   font-size: 5vh;
   color: #fff;
 }
 
-.form-ler  {
+.form-ler {
+  width: 100%;
+  padding: 10px;
+  border-bottom: 3px solid #fff;
+  border-top: 3px solid #fff;
+  border-radius: 5px;
   color: #fff;
   font-size: 25px;
-} 
-
-.form-ler {
-  margin-bottom: 20px;
-  padding: 10px;
-  border: 3px solid #fff;
-  border-radius: 5px;
+  margin-bottom: 5vh;
 }
 
 .ler-comentario  {
-    display: flex;
-  max-width: 10% ;
-}
-
-.ler {
-  overflow: hidden;
-  height: 124vh;
-  overflow: scroll;
+  max-width: 100% ;
+  word-wrap: break-word;
 }
 
 /* -------------------------------- */

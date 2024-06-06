@@ -50,7 +50,7 @@ const SubmitReview = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="container-form-enviar">
+      <div className="Comment-enviar ">
         <h2>Deixe sua Avaliação</h2>
         <label>
           <p>Nome:</p>

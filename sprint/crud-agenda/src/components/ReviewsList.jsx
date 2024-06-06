@@ -19,7 +19,7 @@ const ReviewsList = () => {
 
   return (
     <div className='ler'>
-      <h2>Avaliações</h2>
+      <h2 className='Comment-exibir'>Avaliações</h2>
       {reviews.map((review, index) => (
         <div key={index} className='form-ler'>
             <p>Nome: {review.name}</p>

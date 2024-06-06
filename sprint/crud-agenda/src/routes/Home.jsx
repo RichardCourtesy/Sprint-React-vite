@@ -32,14 +32,13 @@ const Home = () => {
             </section>
 
             <section className="Comment-section">
-            <div className='Comment-enviar'>
                     <SubmitReview />
-            </div>
 
-            <div className='Comment-exibir'>
                 <ReviewsList />
-            </div>
+
             </section>
+
+
 
             <section className='Criadores'>
                 <h1 className='criador-title'>Criadores</h1>
