@@ -17,11 +17,11 @@ const SubmitReview = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // // Validação dos campos obrigatórios
-    // if (rating === 0 || !comment || !name || !email) {
-    //   alert('Todos os campos são obrigatórios!');
-    //   return;
-    // }
+    // Validação dos campos obrigatórios
+    if (rating === 0 || !comment || !name || !email) {
+      alert('Todos os campos são obrigatórios!');
+      return;
+    }
 
     try {
       // Adicionando a avaliação ao Firestore
