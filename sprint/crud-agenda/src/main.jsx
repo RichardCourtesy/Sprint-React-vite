@@ -6,7 +6,8 @@ import App from './App';
 import Home from './routes/Home.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
 import Cursos from './routes/Cursos.jsx';
-import SingIn from './routes/SingIn.jsx'
+import SingIn from './routes/SingIn.jsx';
+import Review from './components/ReviewsList.jsx';
 
 // configurando o router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from './firebaseConfig';
 import '../App.css';
@@ -11,6 +12,7 @@ const SubmitReview = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [remainingChars, setRemainingChars] = useState(250);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -37,6 +39,9 @@ const SubmitReview = () => {
       setName('');
       setEmail('');
       setRemainingChars(250);
+
+      navigate('/', { replace: true });
+      navigate(0);
     } catch (error) {
       console.error('Erro ao enviar a avaliação: ', error);
     }
@@ -46,6 +51,11 @@ const SubmitReview = () => {
     const value = e.target.value;
     setComment(value);
     setRemainingChars(250 - value.length);
+  };
+
+  const handleRefresh = () => {
+    navigate(path, { replace: true });
+    navigate(0); // Atualiza a página atual
   };
 
   return (
@@ -58,7 +68,7 @@ const SubmitReview = () => {
             type="text"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            // required
+            required
           />
         </label>
         <label>
@@ -67,7 +77,7 @@ const SubmitReview = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            // required
+            required
           />
         </label>
         <label>
@@ -83,12 +93,12 @@ const SubmitReview = () => {
             value={comment}
             onChange={handleCommentChange}
             className="comentario"
-            // required
+            required
           />
           <p>{remainingChars} caracteres restantes</p>
         </label>
         <div className="caixa-enviar">
-          <button type="submit" className="enviar">Enviar</button>
+          <button type="submit" className="enviar" onClick={handleRefresh}>Enviar</button>
         </div>
       </div>
     </form>
