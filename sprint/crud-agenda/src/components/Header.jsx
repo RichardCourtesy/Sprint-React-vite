@@ -24,13 +24,13 @@ const Header = () => {
             <nav className="log-cad">
                 <ul>
                     <li>
-                        <Link className="action-button SingIn" to="/SingIn">
+                        <Link className="action-button SingIn" to="/Login">
                         Sign In
                         </Link>
                     </li>
 
                     <li>
-                        <Link className="action-button Cadrastro" to="Cadastro">
+                        <Link className="action-button Cadrastro" to="/Cadastro">
                         Cadastro
                         </Link>
                     </li>                          
