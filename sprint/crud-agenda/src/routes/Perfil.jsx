@@ -1,15 +1,19 @@
 // ReviewsList.js // ela vai exibir os dados inseridos
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
+
 import { collection, getDocs } from 'firebase/firestore';
 import { db } from '../components/firebaseConfig';
 import '../App.css';
+
+import logo from '../assets/logoSF.png'; 
 
 const Perfil = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const querySnapshot = await getDocs(collection(db, 'reviews'));
+      const querySnapshot = await getDocs(collection(db, 'Cadastro'));
       const reviewsList = querySnapshot.docs.map(doc => doc.data());
       setReviews(reviewsList);
     };
@@ -18,16 +22,19 @@ const Perfil = () => {
   }, []);
 
   return (
-    <div className='ler'>
-      <h2 className='Comment-exibir'>Avaliações</h2>
+    <div className='oo'>
+        <div>
+            <p><Link to="/">voltar</Link></p>
+            <img src={logo} alt="Logo" className=""/>
+        </div>
       {reviews.map((review, index) => (
-        <div key={index} className='form-ler'>
+        <div key={index} className='oo'>
             <p>Nome: {review.name}</p>
+            <p>Sobrenome: {review.surname}</p>
+            <p>Idade: {review.age}</p>
+            <p>Pais: {review.pais}</p>
             <p>Email: {review.email}</p>
-          <p>Nota: {review.rating} estrelas</p>
-          <p className='ler-comentario'>Comentário: {review.comment} </p>
-        
-          
+            <p>Senha: {review.password}</p>
 
         </div>
       ))}

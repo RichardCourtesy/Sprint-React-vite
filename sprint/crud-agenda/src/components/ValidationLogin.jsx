@@ -4,6 +4,7 @@ import { db } from '../components/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
+
 const ValidationLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -12,6 +13,8 @@ const ValidationLogin = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    
+
     try {
       const querySnapshot = await getDocs(collection(db, 'Cadastro'));
       const users = querySnapshot.docs.map(doc => doc.data());
