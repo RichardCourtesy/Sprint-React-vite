@@ -6,8 +6,9 @@ import App from './App';
 import Home from './routes/Home.jsx';
 import ErrorPage from './routes/ErrorPage.jsx';
 import Cursos from './routes/Cursos.jsx';
-import Login from './routes/SingIn.jsx';
+import Login from './routes/Login.jsx';
 import Cadastro from './routes/Cadastro.jsx';
+import Perfil from './routes/Perfil.jsx';
 
 // configurando o router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: "/Cadastro",
         element: <Cadastro />
+      },
+      {
+        path: "/Perfil",
+        element: <Perfil />
       }
     ]
   },
