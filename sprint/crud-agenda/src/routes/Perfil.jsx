@@ -1,42 +1,65 @@
-import React, { useState, useEffect } from 'react';
-import { auth } from '../components/firebaseConfig';
+import React, { useEffect, useState } from 'react';
+import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../components/firebaseConfig';
+import Logout from '../components/Logout';
 
 const Perfil = () => {
-  const { currentUser } = useAuth();
-  const [userData, setUserData] = useState(null);
+    const [userData, setUserData] = useState(null);
+    const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (currentUser) {
-      const docRef = doc(db, 'users', currentUser.uid);
-      
-      getDoc(docRef).then((doc) => {
-        if (doc.exists()) {
-          setUserData(doc.data());
-        } else {
-          console.log('Nenhum documento encontrado!');
-        }
-      }).catch((error) => {
-        console.error('Erro ao obter documento:', error);
-      });
+    useEffect(() => {
+        const fetchUserData = async () => {
+            const uid = localStorage.getItem('userUid');
+            if (!uid) {
+                setError('Usuário não autenticado.');
+                return;
+            }
+
+            try {
+                const docRef = doc(db, 'Cadastro', uid);
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    setUserData(docSnap.data());
+                } else {
+                    setError('Nenhum documento encontrado.');
+                }
+            } catch (error) {
+                console.error('Erro ao buscar dados do usuário:', error);
+                setError('Erro ao buscar dados do usuário.');
+            }
+        };
+
+        fetchUserData();
+    }, []);
+
+    if (error) {
+        return <div>{error}</div>;
     }
-  }, [currentUser]);
 
-  return (
-    <div>
-      <h1>Informações do Usuário</h1>
-      {userData && (
+    if (!userData) {
+        return <div>Carregando...</div>;
+    }
+
+    return (
         <div>
-          <p>Nome: {userData.name}</p>
-          <p>Email: {userData.email}</p>
-          {/* Exibir outras informações do usuário conforme necessário */}
+            <h2>Perfil</h2>
+            <p>Nome: {userData.name}</p>
+            <p>Sobrenome: {userData.surname}</p>
+            <p>Idade: {userData.age}</p>
+            <p>País: {userData.pais}</p>
+            <p>Email: {userData.email}</p>
+            
+            <Logout/>
         </div>
-      )}
-    </div>
-  );
+
+        
+    );
 };
 
 export default Perfil;
+
+
 
 
 
