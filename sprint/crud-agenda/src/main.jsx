@@ -10,6 +10,13 @@ import Login from './routes/Login.jsx';
 import Cadastro from './routes/Cadastro.jsx';
 import Perfil from './routes/Perfil.jsx';
 
+// Proteção das rotas
+import RouteProtegido from './components/RotaProtegida';
+import { AuthProvider } from './contexts/AuthContext';
+
+// Redefinir senha
+import ResetPassword from './components/ResetPassword';
+
 // configurando o router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -26,23 +33,45 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: (
+          <RouteProtegido>
+            <Home />
+          </RouteProtegido>
+        )  
       },
       {
         path: "/Cursos",
-        element: <Cursos />
+        element: (
+          <RouteProtegido>
+            <Cursos />
+          </RouteProtegido>
+        )
       },
       {
         path: "/Login",
-        element: <Login />
+        element: (
+            <Login /> 
+        )
       },
       {
         path: "/Cadastro",
-        element: <Cadastro />
+        element: (
+            <Cadastro />  
+        )
       },
       {
         path: "/Perfil",
-        element: <Perfil />
+        element: (
+          <RouteProtegido>
+            <Perfil />
+          </RouteProtegido>
+        )
+      },
+      {
+        path: "/ResetPassword",
+        element: (
+            <ResetPassword />
+        )
       }
     ]
   },
@@ -50,7 +79,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
 

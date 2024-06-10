@@ -11,7 +11,7 @@ const Perfil = () => {
         const fetchUserData = async () => {
             const uid = localStorage.getItem('userUid');
             if (!uid) {
-                setError('Usuário não autenticado.');
+                setError('Primeiro faça login.');
                 return;
             }
 
@@ -49,6 +49,7 @@ const Perfil = () => {
             <p>Idade: {userData.age}</p>
             <p>País: {userData.pais}</p>
             <p>Email: {userData.email}</p>
+            <p>CPF: {userData.cpf}</p>
             
             <Logout/>
         </div>

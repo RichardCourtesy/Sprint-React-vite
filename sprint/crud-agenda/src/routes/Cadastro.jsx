@@ -15,6 +15,10 @@ const Cadastro = () => {
         </div>
 
         <SubmitCadastro />
+
+        <div className="">
+        <p>Já possui conta?<Link to="/Login">Entrar</Link></p> 
+        </div>
 </main>
     ) 
 };

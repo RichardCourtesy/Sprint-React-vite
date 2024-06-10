@@ -14,7 +14,10 @@ const SubmitCadastro = () => {
     const [repetemail, setRepetEmail] = useState('');
     const [password, setPassword] = useState('');
     const [repetpassword, setRepetPassword] = useState('');
+    const [cpf, setCpf] = useState('');
+
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+    const [passwordError, setPasswordError] = useState('');
 
     const navigate = useNavigate();
 
@@ -27,14 +30,24 @@ const SubmitCadastro = () => {
         }
     }, [email, repetemail, password, repetpassword]);
 
+    const validatePassword = (password) => {
+        const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
+        return passwordRegex.test(password);
+      };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Validação dos campos obrigatórios
-        if (!name || !surname || !age || !pais || !email || !repetemail || !password || !repetpassword) {
+        if (!name || !surname || !age || !pais || !email || !repetemail || !password || !repetpassword || !cpf) {
             alert('Todos os campos são obrigatórios!');
             return;
         }
+
+        if (!validatePassword(password)) {
+            setPasswordError('A senha deve ter no mínimo 8 caracteres, incluindo pelo menos um dígito e uma letra maiúscula.');
+            return;
+          }
 
         try {
             // Criar usuário com email e senha no Firebase Authentication
@@ -48,23 +61,28 @@ const SubmitCadastro = () => {
                 age: parseInt(age),
                 pais,
                 email,
+                cpf,
                 timestamp: new Date()
             });
 
             // Resetar os campos após o envio
-            // setName('');
-            // setSurname('');
-            // setAge(0);
-            // setPais('');
-            // setEmail('');
-            // setRepetEmail('');
-            // setPassword('');
-            // setRepetPassword('');
+            setName('');
+            setSurname('');
+            setAge(0);
+            setPais('');
+            setEmail('');
+            setRepetEmail('');
+            setPassword('');
+            setRepetPassword('');
+            setCpf('');
+
+            setPasswordError('');
 
             // Navegar para a página de login após o sucesso do cadastro
             navigate('/Login', { replace: true });
         } catch (error) {
             console.error('Erro ao criar usuário: ', error);
+            setPasswordError('Erro ao cadastrar usuário. Tente novamente.');
         }
     };
 
@@ -89,6 +107,17 @@ const SubmitCadastro = () => {
                         value={surname}
                         placeholder="Digite seu sobrenome"
                         onChange={(e) => setSurname(e.target.value)}
+                        required
+                    />
+                </label>
+
+                <label>
+                    <p>CPF:</p>
+                    <input
+                        type="text"
+                        value={cpf}
+                        placeholder="Digite seu CPF"
+                        onChange={(e) => setCpf(e.target.value)}
                         required
                     />
                 </label>
@@ -143,7 +172,10 @@ const SubmitCadastro = () => {
                         type="password"
                         value={password}
                         placeholder="Use sua melhor senha"
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                            setPasswordError('');
+                          }}
                         required
                     />
                 </label>
@@ -158,6 +190,8 @@ const SubmitCadastro = () => {
                         required
                     />
                 </label>
+
+                {passwordError && <p className="error">{passwordError}</p>}
 
                 <div className="caixa-enviar">
                     <button type="submit" className="oo" disabled={isButtonDisabled}>Cadastrar</button>
