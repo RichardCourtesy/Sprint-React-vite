@@ -34,9 +34,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: (
-          <RouteProtegido>
             <Home />
-          </RouteProtegido>
         )  
       },
       {

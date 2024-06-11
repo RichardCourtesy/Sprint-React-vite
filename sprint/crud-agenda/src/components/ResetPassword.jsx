@@ -1,7 +1,7 @@
-// ResetPassword.js
 import React, { useState } from 'react';
-import { doc, getDoc } from 'firebase/firestore';
-import { db } from '../components/firebaseConfig';
+import { collection, query, where, getDocs } from 'firebase/firestore';
+import { sendPasswordResetEmail } from 'firebase/auth';
+import { db, auth } from '../components/firebaseConfig';
 
 const ResetPassword = () => {
     const [email, setEmail] = useState('');
@@ -11,15 +11,25 @@ const ResetPassword = () => {
 
     const handleResetPassword = async (e) => {
         e.preventDefault();
+        setError('');
+        setSuccessMessage('');
 
         try {
-            // Verificar se o email e o CPF estão no banco de dados
-            const userDoc = await getDoc(doc(db, 'Cadastro', email));
+            // Procurar o documento onde o campo email é igual ao fornecido
+            const q = query(collection(db, 'Cadastro'), where('email', '==', email));
+            const querySnapshot = await getDocs(q);
+
+            if (querySnapshot.empty) {
+                setError('Email ou CPF incorretos.');
+                return;
+            }
+
+            const userDoc = querySnapshot.docs[0];
             const userData = userDoc.data();
-            if (userData && userData.cpf === cpf) {
-                // Implementar a lógica para redefinir a senha
-                // Isso pode envolver o envio de um email com um link para redefinição de senha
-                // Ou fornecer um novo campo para inserir a nova senha
+
+            if (userData.cpf === cpf) {
+                // Enviar o email de redefinição de senha
+                await sendPasswordResetEmail(auth, email);
                 setSuccessMessage('Um link para redefinição de senha foi enviado para o seu email.');
             } else {
                 setError('Email ou CPF incorretos.');
