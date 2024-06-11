@@ -14,8 +14,11 @@ import Perfil from './routes/Perfil.jsx';
 import RouteProtegido from './components/RotaProtegida';
 import { AuthProvider } from './contexts/AuthContext';
 
-// Redefinir senha
+// Email redefinir senha
 import ResetPassword from './components/ResetPassword';
+
+// Redefinirsenha
+import ActionHandler from './components/ActionHandler';
 
 // configurando o router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -69,6 +72,12 @@ const router = createBrowserRouter([
         path: "/ResetPassword",
         element: (
             <ResetPassword />
+        )
+      },
+      {
+        path: "/action",
+        element: (
+            <ActionHandler />
         )
       }
     ]

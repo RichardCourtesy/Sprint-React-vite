@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { doc, setDoc } from 'firebase/firestore';
+import { doc, setDoc, getDocs, query, collection, where } from 'firebase/firestore';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { db, auth } from '../components/firebaseConfig';
 import '../App.css';
@@ -18,6 +18,7 @@ const SubmitCadastro = () => {
 
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
     const [passwordError, setPasswordError] = useState('');
+    const [cpfError, setCpfError] = useState('');
 
     const navigate = useNavigate();
 
@@ -33,7 +34,13 @@ const SubmitCadastro = () => {
     const validatePassword = (password) => {
         const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
         return passwordRegex.test(password);
-      };
+    };
+
+    const checkCpfExists = async (cpf) => {
+        const q = query(collection(db, 'Cadastro'), where('cpf', '==', cpf));
+        const querySnapshot = await getDocs(q);
+        return !querySnapshot.empty;
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -47,7 +54,13 @@ const SubmitCadastro = () => {
         if (!validatePassword(password)) {
             setPasswordError('A senha deve ter no mínimo 8 caracteres, incluindo pelo menos um dígito e uma letra maiúscula.');
             return;
-          }
+        }
+
+        const cpfExists = await checkCpfExists(cpf);
+        if (cpfExists) {
+            setCpfError('CPF já cadastrado. Por favor, use um CPF diferente.');
+            return;
+        }
 
         try {
             // Criar usuário com email e senha no Firebase Authentication
@@ -77,6 +90,7 @@ const SubmitCadastro = () => {
             setCpf('');
 
             setPasswordError('');
+            setCpfError('');
 
             // Navegar para a página de login após o sucesso do cadastro
             navigate('/Login', { replace: true });
@@ -117,15 +131,19 @@ const SubmitCadastro = () => {
                         type="text"
                         value={cpf}
                         placeholder="Digite seu CPF"
-                        onChange={(e) => setCpf(e.target.value)}
+                        onChange={(e) => {
+                            setCpf(e.target.value);
+                            setCpfError('');
+                        }}
                         required
                     />
                 </label>
+                {cpfError && <p className="error">{cpfError}</p>}
 
                 <label>
                     <p>Idade:</p>
                     <input
-                        type='number'
+                        type="number"
                         value={age}
                         placeholder="Digite sua idade"
                         onChange={(e) => setAge(e.target.value)}
@@ -175,7 +193,7 @@ const SubmitCadastro = () => {
                         onChange={(e) => {
                             setPassword(e.target.value);
                             setPasswordError('');
-                          }}
+                        }}
                         required
                     />
                 </label>
