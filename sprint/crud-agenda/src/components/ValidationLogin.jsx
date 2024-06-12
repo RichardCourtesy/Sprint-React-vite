@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../components/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
@@ -9,6 +9,17 @@ const ValidationLogin = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+    useEffect(() => {
+        // Verifica se os campos de email e senha correspondentes são iguais
+        if (email !== '' && password !== '') {
+            setIsButtonDisabled(false);
+        } else {
+            setIsButtonDisabled(true);
+        }
+    });
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -30,27 +41,29 @@ const ValidationLogin = () => {
 
     return (
         <div className='oo'>
-            <h2 className='oo'>Login</h2>
-            <form onSubmit={handleLogin} className='oo'>
-                <div>
-                    <label>Email:</label>
+            
+            <form onSubmit={handleLogin} className='form-Login'>
+                
+            <label>
+                  <p>Email:</p> 
                     <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                </div>
-                <div>
-                    <label>Senha:</label>
+            </label>
+            
+                <label>
+                    <p>Senha:</p>
                     <input
                         type="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                </div>
-                <button type="submit">Login</button>
+                </label>
+                <button type="submit" className='Logar' disabled={isButtonDisabled}>Login</button>
                 {error && <p className="error">{error}</p>}
             </form>
         </div>

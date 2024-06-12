@@ -101,8 +101,9 @@ const SubmitCadastro = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="oo">
+        <section>
+        <form onSubmit={handleSubmit} >
+            <div className='form-cadastro'>
                 <label>
                     <p>Nome:</p>
                     <input
@@ -131,6 +132,7 @@ const SubmitCadastro = () => {
                         type="text"
                         value={cpf}
                         placeholder="Digite seu CPF"
+                        maxLength={11}
                         onChange={(e) => {
                             setCpf(e.target.value);
                             setCpfError('');
@@ -138,7 +140,6 @@ const SubmitCadastro = () => {
                         required
                     />
                 </label>
-                {cpfError && <p className="error">{cpfError}</p>}
 
                 <label>
                     <p>Idade:</p>
@@ -209,13 +210,22 @@ const SubmitCadastro = () => {
                     />
                 </label>
 
-                {passwordError && <p className="error">{passwordError}</p>}
+                <label>
+                    <button type="submit" className="cadastrar" disabled={isButtonDisabled}>Cadastrar</button>               
+                </label>
+                
 
-                <div className="caixa-enviar">
-                    <button type="submit" className="oo" disabled={isButtonDisabled}>Cadastrar</button>
-                </div>
+
             </div>
         </form>
+
+        <div>
+        {passwordError && <p className="error">{passwordError}</p>}
+        {cpfError && <p className="error">{cpfError}</p>}
+
+        </div>
+        </section>
+        
     );
 };
 

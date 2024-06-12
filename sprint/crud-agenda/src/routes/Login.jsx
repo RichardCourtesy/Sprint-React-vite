@@ -10,21 +10,24 @@ import logo from '../assets/logoSF.png';
 const Cadastro = () => {
     return(
         <main>
-        <div>
-            <p><Link to="/">voltar</Link></p>
-            <img src={logo} alt="Logo" className=""/>
+            <section className='section-Login'>
+
+        <div className="logo-titulo-Login">
+            <h2 className='oo'>Login</h2>
+            
+            <img src={logo} alt="Logo" className="logo-Login"/>
         </div>
 
         <ValidationLogin />
 
-        <div className="">
+        <div className="Login-IRcadastro">
                 <p>Não possui conta?<Link to="/Cadastro">Cadastre-se</Link> </p> 
             </div>
 
-        <div className="">
-                <p>Esqueceu sua senha?<Link to="/ResetPassword">Redefir</Link> </p> 
+        <div className="Login-MudaSenha">
+                <p>Esqueceu sua senha?<Link to="/ResetPassword">Redefinir</Link> </p> 
             </div>
-
+    </section>
 </main>
     ) 
 };

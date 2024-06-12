@@ -1,13 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { db, auth } from '../components/firebaseConfig';
+import { Link } from "react-router-dom";
+
+import logo from '../assets/logoSF.png';
 
 const ResetPassword = () => {
     const [email, setEmail] = useState('');
     const [cpf, setCpf] = useState('');
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
+
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+    useEffect(() => {
+        // Verifica se os campos de email e senha correspondentes são iguais
+        if (email !== '' && cpf !== '') {
+            setIsButtonDisabled(false);
+        } else {
+            setIsButtonDisabled(true);
+        }
+    });
 
     const handleResetPassword = async (e) => {
         e.preventDefault();
@@ -41,32 +55,47 @@ const ResetPassword = () => {
     };
 
     return (
-        <div className='oo'>
+        <section className='section-Resetpass'>
+            
+            <div className="logo-titulo-ResetPass">
             <h2 className='oo'>Redefinir Senha</h2>
-            <form onSubmit={handleResetPassword} className='oo'>
-                <div>
-                    <label>Email:</label>
+            
+            <img src={logo} alt="Logo" className="logo-Login"/>
+        </div>
+            <form onSubmit={handleResetPassword} className='form-Resetpass'>
+            <label>
+                <p>Email:</p> 
                     <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
                     />
-                </div>
-                <div>
-                    <label>CPF:</label>
+                </label>
+                <label>
+                <p>CPF:</p>
                     <input
                         type="text"
                         value={cpf}
                         onChange={(e) => setCpf(e.target.value)}
                         required
                     />
-                </div>
-                <button type="submit">Redefinir Senha</button>
+                </label>
                 {error && <p className="error">{error}</p>}
                 {successMessage && <p className="success">{successMessage}</p>}
+                <button type="submit" className='ResetPass' disabled={isButtonDisabled}>Redefinir Senha</button>
+                
+                
             </form>
-        </div>
+
+            <div className="Reset-entrar">
+        <p>Já possui conta?<Link to="/Login">Entrar</Link></p> 
+            </div>
+                <div className="Reset-IRcadastro">
+                <p>Não possui conta?<Link to="/Cadastro">Cadastre-se</Link> </p> 
+            </div>
+
+        </section>
     );
 };
 
