@@ -3,6 +3,8 @@ import { useLocation } from 'react-router-dom';
 import { confirmPasswordReset, verifyPasswordResetCode } from 'firebase/auth';
 import { auth } from '../components/firebaseConfig';
 
+import logo from '../assets/logoSF.png';
+
 const ActionHandler = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
@@ -77,9 +79,15 @@ const ActionHandler = () => {
     return (
         <div className='reset-password'>
             {actionMode === 'resetPassword' ? (
-                <form onSubmit={handleResetPassword}>
+                <form onSubmit={handleResetPassword} className='form-muda'>
+
+                <div className="logo-titulo-Muda">
                     <h2>Redefinir Sua Senha</h2>
-                    {email && <p>Email: {email}</p>}
+            
+                    <img src={logo} alt="Logo" className="logo-Login"/>
+                </div>
+                    
+                    {email && <p className='email-Muda'>Email: {email}</p>}
                     <div>
                         <label>Nova Senha:</label>
                         <input
@@ -107,7 +115,7 @@ const ActionHandler = () => {
 
                     {passwordError && <p className="error">{passwordError}</p>}
 
-                    <button type="submit" disabled={isButtonDisabled}>Redefinir Senha</button>
+                    <button type="submit" disabled={isButtonDisabled} className='Mudar'>Redefinir Senha</button>
                     {error && <p className="error">{error}</p>}
                     {successMessage && <p className="success">{successMessage}</p>}
                 </form>
