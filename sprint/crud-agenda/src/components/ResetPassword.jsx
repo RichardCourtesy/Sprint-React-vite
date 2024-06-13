@@ -89,10 +89,10 @@ const ResetPassword = () => {
             </form>
 
             <div className="Reset-entrar">
-        <p>Já possui conta?<Link to="/Login">Entrar</Link></p> 
+        <p>Já possui conta? <Link to="/Login" className='hovercu'>Entrar</Link></p> 
             </div>
                 <div className="Reset-IRcadastro">
-                <p>Não possui conta?<Link to="/Cadastro">Cadastre-se</Link> </p> 
+                <p>Não possui conta? <Link to="/Cadastro" className='hovercu'>Cadastre-se</Link> </p> 
             </div>
 
         </section>

@@ -26,7 +26,7 @@ const Home = () => {
 
                 <div className="text_slide">
                     <h1>Explore nossos cursos!</h1>
-                    <p className='textinho'>Na BrainBooster contamos com os mais diversos cursos focados a área da tecnologia. Com apenas um click, somente você pode impulsionar seus estudos </p>
+                    <p className='textinho'>Na BrainBooster contamos com os mais diversos cursos focados na área da tecnologia. Com apenas um click, somente você pode impulsionar seus estudos </p>
                     <a type="button" className="btn" href='/Cursos'><b>Vá além! </b></a>
                 </div>
             </section>

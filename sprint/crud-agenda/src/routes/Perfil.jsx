@@ -42,7 +42,8 @@ const Perfil = () => {
     }
 
     return (
-        <div>
+        <section className='section-Perfil'>
+        <div className='div-perfil'>
             <h2>Perfil</h2>
             <p>Nome: {userData.name}</p>
             <p>Sobrenome: {userData.surname}</p>
@@ -50,9 +51,12 @@ const Perfil = () => {
             <p>País: {userData.pais}</p>
             <p>Email: {userData.email}</p>
             <p>CPF: {userData.cpf}</p>
-            
-            <Logout/>
+
         </div>
+        <div className='Logout'>
+            <Logout/>
+            </div>
+        </section>
 
         
     );

@@ -19,6 +19,8 @@ const SubmitCadastro = () => {
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
     const [passwordError, setPasswordError] = useState('');
     const [cpfError, setCpfError] = useState('');
+    const [generalError, setGeneralError] = useState('');
+    const [ageError, setAgeError] = useState('');
 
     const navigate = useNavigate();
 
@@ -56,6 +58,11 @@ const SubmitCadastro = () => {
             return;
         }
 
+        if (cpf.length !== 11) {
+            setCpfError('O CPF deve ter 11 dígitos.');
+            return;
+        }
+
         const cpfExists = await checkCpfExists(cpf);
         if (cpfExists) {
             setCpfError('CPF já cadastrado. Por favor, use um CPF diferente.');
@@ -81,7 +88,7 @@ const SubmitCadastro = () => {
             // Resetar os campos após o envio
             setName('');
             setSurname('');
-            setAge(0);
+            setAge('');
             setPais('');
             setEmail('');
             setRepetEmail('');
@@ -91,14 +98,19 @@ const SubmitCadastro = () => {
 
             setPasswordError('');
             setCpfError('');
+            setGeneralError('');
 
-            // Navegar para a página de login após o sucesso do cadastro
-            navigate('/Login', { replace: true });
-        } catch (error) {
-            console.error('Erro ao criar usuário: ', error);
-            setPasswordError('Erro ao cadastrar usuário. Tente novamente.');
-        }
-    };
+// Navegar para a página de login após o sucesso do cadastro
+navigate('/Login', { replace: true });
+} catch (error) {
+    console.error('Erro ao criar usuário: ', error);
+    if (error.code === 'auth/email-already-in-use') {
+        setGeneralError('O email já está em uso. Por favor, use um email diferente.');
+    } else {
+        setGeneralError('Erro ao cadastrar usuário. Tente novamente.');
+    }
+}
+};
 
     return (
         <section>
@@ -129,14 +141,19 @@ const SubmitCadastro = () => {
                 <label>
                     <p>CPF:</p>
                     <input
-                        type="text"
+                        type="number"
                         value={cpf}
                         placeholder="Digite seu CPF"
                         maxLength={11}
-                        onChange={(e) => {
-                            setCpf(e.target.value);
-                            setCpfError('');
-                        }}
+                            onChange={(e) => {
+                                const valor = e.target.value;
+                                if (valor.length <= 11)  {
+                                    setCpf(e.target.value);
+                                    setCpfError('');
+                                } else {
+                                    setAgeError('A idade deve ter no máximo 3 dígitos.');
+                                }
+                            }}
                         required
                     />
                 </label>
@@ -147,7 +164,16 @@ const SubmitCadastro = () => {
                         type="number"
                         value={age}
                         placeholder="Digite sua idade"
-                        onChange={(e) => setAge(e.target.value)}
+                        max={999}
+                        onChange={(e) => {
+                            const value = e.target.value;
+                            if (value.length <= 3) {
+                                setAge(value);
+                                setAgeError('');
+                            } else {
+                                setAgeError('A idade deve ter no máximo 3 dígitos.');
+                            }
+                        }}
                         required
                     />
                 </label>
@@ -175,7 +201,7 @@ const SubmitCadastro = () => {
                 </label>
 
                 <label>
-                    <p>Repita Seu Email:</p>
+                    <p>Repita seu Email:</p>
                     <input
                         type="email"
                         value={repetemail}
@@ -222,6 +248,7 @@ const SubmitCadastro = () => {
         <div>
         {passwordError && <p className="error">{passwordError}</p>}
         {cpfError && <p className="error">{cpfError}</p>}
+        {generalError && <p className="error">{generalError}</p>}
 
         </div>
         </section>

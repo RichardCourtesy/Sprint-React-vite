@@ -20,9 +20,9 @@ const Cadastro = () => {
         <SubmitCadastro />
         </div>
 
-        <div className="cadastro-entrar">
-        <p>Já possui conta?<Link to="/Login">Entrar</Link></p> 
-        </div>
+        
+        <p className="cadastro-entrar">Já possui conta? <Link to="/Login" className='hovercu'>Entrar</Link></p> 
+        
             </section>
         </main>
     ) 

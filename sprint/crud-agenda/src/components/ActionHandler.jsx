@@ -82,13 +82,14 @@ const ActionHandler = () => {
                 <form onSubmit={handleResetPassword} className='form-muda'>
 
                 <div className="logo-titulo-Muda">
-                    <h2>Redefinir Sua Senha</h2>
+                    <h2>Redefinir Senha</h2>
             
                     <img src={logo} alt="Logo" className="logo-Login"/>
                 </div>
                     
                     {email && <p className='email-Muda'>Email: {email}</p>}
-                    <div>
+                    <form className='form-resetpass'>
+                    <div className='new-pass'>
                         <label>Nova Senha:</label>
                         <input
                             type="password"
@@ -100,7 +101,7 @@ const ActionHandler = () => {
                             required
                         />
                     </div>
-                    <div>
+                    <div className='new-pass'>
                         <label>Confirme a Nova Senha:</label>
                         <input
                             type="password"
@@ -112,12 +113,15 @@ const ActionHandler = () => {
                             required
                         />
                     </div>
+                </form>
 
                     {passwordError && <p className="error">{passwordError}</p>}
-
-                    <button type="submit" disabled={isButtonDisabled} className='Mudar'>Redefinir Senha</button>
-                    {error && <p className="error">{error}</p>}
                     {successMessage && <p className="success">{successMessage}</p>}
+                    {error && <p className="error">{error}</p>}
+                    
+                    <button type="submit" disabled={isButtonDisabled} className='Mudar'>Redefinir Senha</button>
+                    
+                    
                 </form>
             ) : (
                 <p>Carregando...</p>

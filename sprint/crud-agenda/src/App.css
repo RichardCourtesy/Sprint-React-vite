@@ -533,6 +533,15 @@ button.cadastrar:disabled {
   font-size: 25px;
 }
 
+.hovercu {
+  color: #fff;
+
+}
+.hovercu:hover {
+  color: #000;
+
+}
+
 /* -------------------------------- */
 /* Página de Login*/
 /* -------------------------------- */
@@ -774,4 +783,71 @@ color: #000;
 
 .email-Muda {
   font-size: 25px;
+}
+
+.form-resetpass{
+  display: flex;
+  flex-direction: column;
+  gap: 5vh;
+}
+.new-pass {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  
+}
+
+/* -------------------------------- */
+/* Página de Perfil */
+/* -------------------------------- */
+
+.section-Perfil {
+  display: flex;
+  background-color: var(--button-color-transparent);
+  flex-direction: column;
+  align-items: start;
+  max-width: 600px;
+  margin: 10vh auto;
+  border-radius: 20px;
+}
+
+.div-perfil {
+  margin-left: 5vh;
+}
+
+.section-Perfil h2 {
+  color: #000;
+  font-size: 35px;
+}
+.section-Perfil p {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  max-width: 100% ;
+  word-wrap: break-word;
+}
+
+.Logout {
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+.Sair {
+  padding: 0.10rem 3rem;
+  border: none;
+  background-color: #ccc;
+  margin: 5vh;
+  color: #000;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  justify-content: end;
+
+}
+
+button.Sair:hover {
+  background-color: var(--button-color);
+color: white;
+
 }
