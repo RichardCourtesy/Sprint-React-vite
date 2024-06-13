@@ -12,6 +12,8 @@ import imagem3 from "../assets/curso_3.png";
 
 import user from "../assets/Criador.png"
 
+import '../components/CSS/Home.css'
+
 const Home = () => {
     const images = [imagem1, imagem2, imagem3];
 
