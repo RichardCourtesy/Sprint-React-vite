@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+
 import '../App.css';
+import '../components/CSS/Login.css'
 
 import ValidationLogin from '../components/ValidationLogin';
-import ResetPassword from '../components/ResetPassword';
+
 
 import logo from '../assets/logoSF.png'; 
 
-const Cadastro = () => {
+const Login = () => {
     return(
         <main>
             <section className='section-Login'>
@@ -32,4 +34,4 @@ const Cadastro = () => {
     ) 
 };
 
-export default Cadastro;
+export default Login;

@@ -3,6 +3,9 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../components/firebaseConfig';
 import Logout from '../components/Logout';
 
+import '../App.css';
+import '../components/CSS/Perfil.css';
+
 const Perfil = () => {
     const [userData, setUserData] = useState(null);
     const [error, setError] = useState('');

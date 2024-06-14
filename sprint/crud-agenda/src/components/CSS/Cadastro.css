@@ -1,0 +1,84 @@
+/* -------------------------------- */
+/* Página de cadastro */
+/* -------------------------------- */
+
+.section-Cadastro {
+    display: flex;
+    background-color: var(--button-color-transparent);
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 10vh auto;
+    border-radius: 20px;
+    
+  }
+  
+  .logo-titulo-cadastro{
+    display: flex;
+    flex-direction: column;
+    margin: 5vh;
+    align-items: center;
+    gap: 20px;
+  }
+  .form-cadastro {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+  
+  }
+  
+  .form-cadastro label {
+    border: none;
+    border-radius: 5px;
+    
+    
+  }
+  .form-cadastro input {
+    border: none;
+    border-radius: 5px;
+    width: 45vh;
+    font-size: 20px;
+  }
+  .form-cadastro p {
+   font-size: 25px;
+  }
+  
+  .error {
+   font-size: 25px;
+   word-wrap: break-word;
+   max-width: 70;
+  
+  }
+  
+  .cadastrar {
+      padding: 0.60rem 3rem;
+      border: none;
+      background-color: var(--button-color);
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 20px;
+  
+  }
+  
+  button.cadastrar:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    color: #000;
+  }
+  
+  
+  .cadastro-entrar {
+    font-size: 25px;
+  }
+  
+  .hovercu {
+    color: #fff;
+  
+  }
+  .hovercu:hover {
+    color: #000;
+  
+  }

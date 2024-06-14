@@ -12,6 +12,7 @@ import imagem3 from "../assets/curso_3.png";
 
 import user from "../assets/Criador.png"
 
+import '../App.css'
 import '../components/CSS/Home.css'
 
 const Home = () => {

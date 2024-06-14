@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+
 import { collection, query, where, getDocs } from 'firebase/firestore';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import { db, auth } from '../components/firebaseConfig';
-import { Link } from "react-router-dom";
+
+import '../App.css'
+import './CSS/ResetPassword.css'
 
 import logo from '../assets/logoSF.png';
 

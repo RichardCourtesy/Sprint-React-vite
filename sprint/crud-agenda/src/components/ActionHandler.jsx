@@ -5,6 +5,9 @@ import { auth } from '../components/firebaseConfig';
 
 import logo from '../assets/logoSF.png';
 
+import '../App.css'
+import './CSS/ActionHandler.css'
+
 const ActionHandler = () => {
     const location = useLocation();
     const queryParams = new URLSearchParams(location.search);
