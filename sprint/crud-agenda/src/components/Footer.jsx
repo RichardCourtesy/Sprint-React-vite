@@ -16,8 +16,8 @@ const Footer = () => {
 
             <div className="Impresa">
                 <img src={logo } alt='' />
-                <div className="Impresa_text">
-                <h1>Brainboosters</h1>
+                <div className="Impresa-text">
+                <h1>BrainBoosters</h1>
                 <p>Conhecimento é poder, torne-se poderoso aqui na BrainBoosters</p>
                 </div>
             </div>
@@ -30,7 +30,7 @@ const Footer = () => {
                     <a href="/Cursos"><i className="bi bi-book-half"> Mais Cursos</i></a>
                     <a href="/"> <i className="bi bi-telephone-fill"> Contatos</i></a>
                 
-                    <p className="Direitos">©All rights reserved</p>
+                    <p>©All rights reserved</p>
                     </div>   
             </div>
 
