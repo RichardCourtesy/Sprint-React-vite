@@ -71,11 +71,8 @@
   color: #000;
   }
   
-  .logo-titulo-Muda {
-    display: flex;
-    flex-direction: column;
+  .Titulo-Muda {
     margin: 5vh;
-    align-items: center;
     gap: 20px;
   }
   

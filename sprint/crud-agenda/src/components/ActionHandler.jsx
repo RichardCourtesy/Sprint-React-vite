@@ -3,8 +3,6 @@ import { useLocation } from 'react-router-dom';
 import { confirmPasswordReset, verifyPasswordResetCode } from 'firebase/auth';
 import { auth } from '../components/firebaseConfig';
 
-import logo from '../assets/logoSF.png';
-
 import '../App.css'
 import './CSS/ActionHandler.css'
 
@@ -84,11 +82,7 @@ const ActionHandler = () => {
             {actionMode === 'resetPassword' ? (
                 <form onSubmit={handleResetPassword} className='form-muda'>
 
-                <div className="logo-titulo-Muda">
-                    <h2>Redefinir Senha</h2>
-            
-                    <img src={logo} alt="Logo" className="logo-Login"/>
-                </div>
+                    <h2 className='Titulo-Muda'>Redefinir Senha</h2>                
                     
                     {email && <p className='email-Muda'>Email: {email}</p>}
                     <form className='form-resetpass'>

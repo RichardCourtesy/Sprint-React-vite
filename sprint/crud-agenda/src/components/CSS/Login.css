@@ -13,12 +13,9 @@
     
   }
   
-  .logo-titulo-Login{
+  .Titulo-Login{
     display: flex;
-    flex-direction: column;
     margin: 5vh;
-    align-items: center;
-    gap: 20px;
   }
   
   .form-Login {

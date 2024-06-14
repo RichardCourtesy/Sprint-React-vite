@@ -13,13 +13,11 @@
     
   }
   
-  .logo-titulo-cadastro{
+  .Titulo-cadastro{
     display: flex;
-    flex-direction: column;
     margin: 5vh;
-    align-items: center;
-    gap: 20px;
   }
+
   .form-cadastro {
     /* background-color: red; */
     display: flex;

@@ -6,19 +6,14 @@ import '../components/CSS/Login.css'
 
 import ValidationLogin from '../components/ValidationLogin';
 
-
-import logo from '../assets/logoSF.png'; 
-
 const Login = () => {
     return(
         <main>
             <section className='section-Login'>
 
-        <div className="logo-titulo-Login">
-            <h2 className='oo'>Login</h2>
-            
-            <img src={logo} alt="Logo" className="logo-Login"/>
-        </div>
+        
+            <h2 className='Titulo-Login'>Login</h2>
+        
 
         <ValidationLogin />
 
