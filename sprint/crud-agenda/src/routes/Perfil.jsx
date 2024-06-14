@@ -48,12 +48,34 @@ const Perfil = () => {
         <section className='section-Perfil'>
         <div className='div-perfil'>
             <h2>Perfil</h2>
-            <p>Nome: {userData.name}</p>
+
+            <div className='Identidade'>
+
+                <div className='Icon-pessoa'>
+                    <i class="bi bi-person"></i>
+                    <p>Nome: {userData.name}</p>
+                </div>
+
             <p>Sobrenome: {userData.surname}</p>
             <p>Idade: {userData.age}</p>
+
+            </div>
+
+            <div className='Text-icon'>
+            <i class="bi bi-globe-americas"></i>
             <p>País: {userData.pais}</p>
+            </div>
+            
+            <div className='Text-icon'>
+            <i class="bi bi-at"></i>
             <p>Email: {userData.email}</p>
+            </div>
+            
+            <div className='Text-icon'>
+            <i class="bi bi-person-vcard"></i>
             <p>CPF: {userData.cpf}</p>
+            </div>
+            
 
         </div>
         <div className='Logout'>

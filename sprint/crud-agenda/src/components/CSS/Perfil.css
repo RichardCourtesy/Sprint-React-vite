@@ -7,13 +7,13 @@
     background-color: var(--button-color-transparent);
     flex-direction: column;
     align-items: start;
-    max-width: 600px;
+    max-width: 900px;
     margin: 10vh auto;
     border-radius: 20px;
   }
   
   .div-perfil {
-    margin-left: 5vh;
+    width: 100%;
   }
   
   .section-Perfil h2 {
@@ -27,7 +27,57 @@
     max-width: 100% ;
     word-wrap: break-word;
   }
-  
+
+  .Identidade {
+    display: flex;
+    margin-left: 15px;
+    width: 95%;
+    gap: 20px;
+  }
+  .Identidade p {
+    background-color: rgba(255, 255, 255, 0.708);
+    border-radius: 8px;
+    padding: 0 10px 0px 10px;
+    
+  }
+
+  .Icon-pessoa {
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+  }
+
+  .Text-icon {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+    gap: 10px;
+  }
+
+  .bi-person {
+    font-size: 25px;
+    
+  }
+
+  .bi-globe-americas {
+    font-size: 25px;
+  }
+
+  .bi-at {
+    font-size: 25px;
+  }
+
+  .bi-person-vcard{
+    font-size: 25px;
+  }
+
+  .Text-icon p{
+    background-color: rgba(255, 255, 255, 0.708) ;
+    padding: 0 10px 0px 10px;
+    border-radius: 8px;
+    
+  }
+
   .Logout {
     display: flex;
     width: 100%;

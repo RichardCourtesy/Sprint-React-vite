@@ -17,12 +17,11 @@ const Login = () => {
 
         <ValidationLogin />
 
-        <div className="Login-IRcadastro">
-                <p>Não possui conta? <Link to="/Cadastro" className='hovercu'>Cadastre-se</Link> </p> 
-            </div>
+        <div className='Div-links'>
 
-        <div className="Login-MudaSenha">
-                <p>Esqueceu sua senha? <Link to="/ResetPassword" className='hovercu'>Redefinir</Link> </p> 
+                <p className='Login-IRcadastro'>Não possui conta? <Link to="/Cadastro" className='Cadastro'>Cadastre-se</Link> </p> 
+                <p className='Login-MudaSenha'>Esqueceu sua senha? <Link to="/ResetPassword" className='MudarSenha'>Redefinir</Link> </p> 
+
             </div>
     </section>
 </main>

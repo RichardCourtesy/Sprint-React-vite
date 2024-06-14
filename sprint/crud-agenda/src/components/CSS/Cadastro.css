@@ -23,7 +23,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5vh;
+    gap: 2vh;
   
   }
   
@@ -36,11 +36,12 @@
   .form-cadastro input {
     border: none;
     border-radius: 5px;
-    width: 45vh;
+    width: 65vh;
     font-size: 20px;
   }
   .form-cadastro p {
    font-size: 25px;
+   margin-bottom: 3px;
   }
   
   .error {
@@ -74,8 +75,8 @@
   
   .hovercu {
     color: #fff;
-  
   }
+  
   .hovercu:hover {
     color: #000;
   

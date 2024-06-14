@@ -26,11 +26,12 @@
     
   }
   
-  .text_slide {
+  .Text-slide {
     background-color: var(--button-color-transparent) ;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     margin: 10vh;
     width: 60vh;
     gap: 10vh;
@@ -38,9 +39,13 @@
     border-radius: 10px;
     color: #fff;
   }
+  .Text-slide h1{
+    font-size: 5vh;
+    
+  }
   
-  .textinho {
-    font-size: 25px;
+  .Textinho {
+    font-size: 22px;
     font-weight: 700; /*grossura do texto*/
    /* line-height: 43px; espaço entre linhas*/
    text-align: justify;
@@ -52,6 +57,7 @@
     transition: 0.5s;
     display: inline-block;
     margin: 0 4vh;
+    width: 70%;
   }
   
   .btn:hover {
@@ -188,7 +194,7 @@
   }
   
   /* -------------------------------- */
-  /* Criadores */
+  /* Desenvolvedores */
   /* -------------------------------- */
   
   .Criadores {
@@ -198,8 +204,12 @@
     background-color: var(--primary-color);
     color: #fff;
   }
+
+  .Criadores-title{
+    font-size: 30px;
+  }
   
-  .pessoas {
+  .Pessoas {
     display: flex;
     flex-direction: row;
     gap: 40px;
@@ -210,6 +220,10 @@
     align-items: center;
   }
   
+  .user h2 {
+    font-size: 22px;
+  }
+  
   .foto-user {
     width: 35vh;
     border: 3px solid #fff;
@@ -217,5 +231,5 @@
   }
   
   .funcao {
-    font-size: 34px;
+    font-size: 22px;
   }

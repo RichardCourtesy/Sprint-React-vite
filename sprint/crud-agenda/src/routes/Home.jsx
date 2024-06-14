@@ -27,9 +27,9 @@ const Home = () => {
                     
                 </div>
 
-                <div className="text_slide">
+                <div className="Text-slide">
                     <h1>Explore nossos cursos!</h1>
-                    <p className='textinho'>Na BrainBooster contamos com os mais diversos cursos focados na área da tecnologia. Com apenas um click, somente você pode impulsionar seus estudos </p>
+                    <p className='Textinho'>Na BrainBooster contamos com os mais diversos cursos focados na área da tecnologia. Com apenas um click, somente você pode impulsionar seus estudos </p>
                     <a type="button" className="btn" href='/Cursos'><b>Vá além! </b></a>
                 </div>
             </section>
@@ -44,43 +44,43 @@ const Home = () => {
 
 
             <section className='Criadores'>
-                <h1 className='criador-title'>Criadores</h1>
-            <div className='pessoas'>
+                <h1 className='Criadores-title'>Desenvolvedores</h1>
+            <div className='Pessoas'>
 
                 <label className="user">
-                    <h2>Richard</h2>
+                    <h2>Richard Alves</h2>
                     <img src={user} alt="" className='foto-user'/>
                     <p className='funcao'>Developer</p>
                 </label>
 
                 <label className="user">
-                    <h2>Juan</h2>
+                    <h2>Juan Anacleto</h2>
                     <img src={user} alt="" className='foto-user'/>
                     <p className='funcao'>Developer</p>
                 </label>
 
                 <label className="user">
-                    <h2>Vinicius Tadeu</h2>
+                    <h2>Isabelly Rodrigues</h2>
                     <img src={user} alt="" className='foto-user'/>
                     <p className='funcao'>Designer</p>
                 </label>
             </div>
 
-            <div className='pessoas'>
+            <div className='Pessoas'>
                 <label className="user">
-                    <h2>Isa</h2>
+                    <h2>Isabella Guedes</h2>
                     <img src={user} alt="" className='foto-user'/>
                     <p className='funcao'>Designer</p>
                 </label>
                 
                 <label className="user">
-                    <h2>Isa</h2>
+                    <h2>Isabella Ravagnani</h2>
                     <img src={user} alt="" className='foto-user'/>
                     <p className='funcao'>Designer</p>
                 </label>
 
                 <label className="user">
-                    <h2>Isa</h2>
+                    <h2>Vinicius Tadeu</h2>
                     <img src={user} alt="" className='foto-user'/>
                     <p className='funcao'>Designer</p>
                 </label>
