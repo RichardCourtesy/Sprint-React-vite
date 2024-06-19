@@ -5,6 +5,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { db, auth } from '../components/firebaseConfig';
 import '../App.css';
 
+const defaultProfileImageUrl = 'https://firebasestorage.googleapis.com/v0/b/sprint-react-vite.appspot.com/o/fotoStart.png?alt=media&token=df66e3fd-8714-4c6f-8943-6cf3d11152fc';
+
 const SubmitCadastro = () => {
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
@@ -82,6 +84,7 @@ const SubmitCadastro = () => {
                 pais,
                 email,
                 cpf,
+                profileImageUrl: defaultProfileImageUrl,
                 timestamp: new Date()
             });
 

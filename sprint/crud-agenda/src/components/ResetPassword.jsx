@@ -8,8 +8,6 @@ import { db, auth } from '../components/firebaseConfig';
 import '../App.css'
 import './CSS/ResetPassword.css'
 
-import logo from '../assets/logoSF.png';
-
 const ResetPassword = () => {
     const [email, setEmail] = useState('');
     const [cpf, setCpf] = useState('');
@@ -62,9 +60,8 @@ const ResetPassword = () => {
         <section className='section-Resetpass'>
             
             <div className="logo-titulo-ResetPass">
-            <h2 className='oo'>Redefinir Senha</h2>
-            
-            <img src={logo} alt="Logo" className="logo-Login"/>
+            <h2>Redefinir Senha</h2>
+
         </div>
             <form onSubmit={handleResetPassword} className='form-Resetpass'>
             <label>
