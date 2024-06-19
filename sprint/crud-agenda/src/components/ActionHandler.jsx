@@ -7,7 +7,10 @@ import '../App.css'
 import './CSS/ActionHandler.css'
 
 const ActionHandler = () => {
+    //retorna o objeto de localização que representa a URL atual.
     const location = useLocation();
+    //analisa a string de consulta na URL para obter parâmetros 
+    //como mode (modo de ação) e oobCode (código de ação de Firebase).
     const queryParams = new URLSearchParams(location.search);
     const mode = queryParams.get('mode');
     const oobCode = queryParams.get('oobCode');
@@ -20,6 +23,7 @@ const ActionHandler = () => {
     const [passwordError, setPasswordError] = useState('');
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
+    //useEffect é usado para executar uma ação quando mode ou oobCode mudam.
     useEffect(() => {
         if (mode && oobCode) {
             setActionMode(mode);
@@ -29,6 +33,7 @@ const ActionHandler = () => {
         }
     }, [mode, oobCode]);
 
+    //ferifica se o codigo de redefinir senha é valido
     const handleVerifyPasswordResetCode = async (code) => {
         try {
             const email = await verifyPasswordResetCode(auth, code);
@@ -39,11 +44,15 @@ const ActionHandler = () => {
         }
     };
 
+    //valida a senha apos ferificar se ela tem 8 letras, uma letra maiuscula e um numero.
     const validatePassword = (password) => {
         const passwordRegex = /^(?=.*\d)(?=.*[A-Z]).{8,}$/;
         return passwordRegex.test(password);
     };
 
+    //Lida com o envio do formulário de redefinição de senha.
+    //Verifica se as senhas coincidem e se a nova senha atende aos critérios de validação.
+    //Chama confirmPasswordReset do Firebase Authentication para efetuar a redefinição da senha.
     const handleResetPassword = async (e) => {
         e.preventDefault();
         setError('');
@@ -68,7 +77,7 @@ const ActionHandler = () => {
             setError('Erro ao redefinir a senha. Por favor, tente novamente.');
         }
     };
-
+    //Habilitar Botão de Envio se as senhas forem iguais
     useEffect(() => {
         if (password === confirmPassword && password !== '') {
             setIsButtonDisabled(false);

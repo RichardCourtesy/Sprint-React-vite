@@ -10,12 +10,18 @@ import '../components/CSS/Perfil.css';
 import ImagemPadrao from '../assets/FotoPadrao.png';
 
 const Perfil = () => {
+    //userData: Armazena os dados do usuário.
     const [userData, setUserData] = useState(null);
+    //error: Armazena mensagens de erro.
     const [error, setError] = useState('');
+    //uploading: Indica se uma imagem está sendo enviada.
     const [uploading, setUploading] = useState(false);
+    //uploadError: Armazena erros relacionados ao upload da imagem.
     const [uploadError, setUploadError] = useState('');
+    //fileInputKey: Utilizado para resetar o input de arquivo após um upload.
     const [fileInputKey, setFileInputKey] = useState(Date.now());
 
+    //useEffect busca os dados do usuário do Firestore.
     useEffect(() => {
         const fetchUserData = async () => {
             const uid = localStorage.getItem('userUid');
@@ -42,6 +48,11 @@ const Perfil = () => {
         fetchUserData();
     }, []);
 
+    //Manipuladores de Eventos
+
+    //Este manipulador é chamado quando um usuário seleciona uma imagem para upload.
+    //Envia a imagem para o Firebase Storage e atualiza a URL da imagem no Firestore.
+    //Atualiza o estado userData com a nova URL da imagem e reseta o input de arquivo.
     const handleImageUpload = async (event) => {
         const file = event.target.files[0];
         if (!file) return;
@@ -73,6 +84,8 @@ const Perfil = () => {
         setUploading(false);
     };
 
+    //Este manipulador é usado para remover a imagem de perfil.
+    //Remove a URL da imagem do Firestore e atualiza o estado userData.
     const handleImageRemove = async () => {
         setUploading(true);
         setUploadError('');

@@ -3,17 +3,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar as fullStar, faStarHalfAlt as halfStar, faStar as emptyStar } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const StarRating = ({ rating, setRating }) => {
-  const [hoverRating, setHoverRating] = useState(0);
+//componente StarRating que renderiza um conjunto de estrelas 
+//para permitir que o usuário avalie algo selecionando uma quantidade de estrelas.
 
+//rating (valor da avaliação atual) e setRating (função para atualizar a avaliação).
+const StarRating = ({ rating, setRating }) => {
+//useState gerencia o hoverRating e indica o número de estrelas sobre o qual o mouse está passando.
+  const [hoverRating, setHoverRating] = useState(0);
+  //Atualiza hoverRating para refletir quantas estrelas o usuário está passando o mouse.
   const handleMouseOver = (value) => {
     setHoverRating(value);
   };
-
+  //retorna o valor de estrelas para 0 quando tira o mause delas
   const handleMouseLeave = () => {
     setHoverRating(0);
   };
-
+  //define o numero de estrelas apos clicar sobre elas
   const handleClick = (value) => {
     setRating(value);
   };
@@ -67,3 +72,7 @@ const Estrelas = ({ rating, setRating }) => {
 };
 
 export default Estrelas;
+
+//Quando o mouse passa sobre uma estrela, handleMouseOver é chamado para atualizar hoverRating, mudando visualmente a cor das estrelas.
+//Quando o mouse sai da área das estrelas, handleMouseLeave reseta a cor para refletir a avaliação atual (rating).
+//Ao clicar em uma estrela, handleClick atualiza rating com o valor da estrela clicada.

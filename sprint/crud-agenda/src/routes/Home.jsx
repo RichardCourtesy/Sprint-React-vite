@@ -1,3 +1,15 @@
+// O hook useState permite adicionar estado a um componente funcional.
+
+//O hook useEffect permite executar efeitos colaterais em componentes
+//funcionais, como buscar dados, assinar serviços ou manipular o DOM.
+
+//O hook useContext permite acessar o valor de um contexto em um 
+//componente funcional.
+
+//O hook useRef permite criar uma referência mutável que persiste
+//durante todo o ciclo de vida do componente. Pode ser usada para 
+//acessar um elemento DOM diretamente.
+
 import React, { useEffect, useState } from 'react'
 
 import Carousel_home from '../components/Carousel_home.jsx';
@@ -11,6 +23,9 @@ import imagem2 from "../assets/curso_2.png";
 import imagem3 from "../assets/curso_3.png";
 
 import user from "../assets/Criador.png"
+import Juan from "../assets/Juan.png";
+import Tadeu from "../assets/Tadeu.png";
+import Guedes from "../assets/IsaGuedes.png"
 
 import '../App.css'
 import '../components/CSS/Home.css'
@@ -55,7 +70,7 @@ const Home = () => {
 
                 <label className="user">
                     <h2>Juan Anacleto</h2>
-                    <img src={user} alt="" className='foto-user'/>
+                    <img src={Juan} alt="" className='foto-user'/>
                     <p className='funcao'>Developer</p>
                 </label>
 
@@ -69,7 +84,7 @@ const Home = () => {
             <div className='Pessoas'>
                 <label className="user">
                     <h2>Isabella Guedes</h2>
-                    <img src={user} alt="" className='foto-user'/>
+                    <img src={Guedes} alt="" className='foto-user'/>
                     <p className='funcao'>Designer</p>
                 </label>
                 
@@ -81,7 +96,7 @@ const Home = () => {
 
                 <label className="user">
                     <h2>Vinicius Tadeu</h2>
-                    <img src={user} alt="" className='foto-user'/>
+                    <img src={Tadeu} alt="" className='foto-user'/>
                     <p className='funcao'>Designer</p>
                 </label>
             </div>   
