@@ -95,7 +95,7 @@ const Carousel = () => {
                 <img
                     src={item.image}
                     alt="Slider"
-                    className='carousel-image'
+                    className='carousel-images'
                 />
                 
                 </div>

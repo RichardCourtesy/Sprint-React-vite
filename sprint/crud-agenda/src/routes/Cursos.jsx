@@ -28,7 +28,43 @@ const Cursos = () => {
             <section className="Recomend_cursos">
 
                      <div className="Title">
-                    <h2>Recomendações:</h2>
+                    <h2>Tecnologia:</h2>
+
+                     <div className="Search">
+                        <p>Procurando algo especifico?</p>
+                            <form action="/Search" method="GET">
+                                <input type="text" name="busca" placeholder="Pesquisar..."></input>
+                                    <button type="submit">Buscar</button>
+                            </form> 
+                    </div>
+                </div>
+                <div className="carousel2">
+                     <Carousel />
+                     </div>
+            </section>
+
+            <section className="Recomend_cursos">
+
+                     <div className="Title">
+                    <h2>Design:</h2>
+
+                     <div className="Search">
+                        <p>Procurando algo especifico?</p>
+                            <form action="/Search" method="GET">
+                                <input type="text" name="busca" placeholder="Pesquisar..."></input>
+                                    <button type="submit">Buscar</button>
+                            </form> 
+                    </div>
+                </div>
+                <div className="carousel2">
+                     <Carousel />
+                     </div>
+            </section>
+
+            <section className="Recomend_cursos">
+
+                     <div className="Title">
+                    <h2>Mais vendidos:</h2>
 
                      <div className="Search">
                         <p>Procurando algo especifico?</p>

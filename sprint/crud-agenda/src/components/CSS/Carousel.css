@@ -1,6 +1,6 @@
 .Slide-item {
     display: flex;
-    width: 50vh;
+    width: 40vh;
     object-fit: cover;
     margin-left: 27vh;
 }
@@ -8,12 +8,15 @@
 .Carousel-container {
     background-color: var(--section-color); 
     margin-bottom: 18vh;
-    padding: 0;
+    height: 60vh;
+    
 }
 
-.carousel-image {
+.carousel-images {
     width: 100%; /* Ajusta a largura das imagens ao tamanho do contêiner */
     height: auto; /* Mantém a proporção das imagens */
     max-height: 400px; /* Define uma altura máxima, você pode ajustar conforme necessário */
     object-fit: cover; /* Opcional: ajusta como a imagem deve ser redimensionada para caber no contêiner */
-  }
+    margin-top: 3vh;
+    border-radius: 10px;
+}
