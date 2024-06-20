@@ -26,6 +26,9 @@ import user from "../assets/Criador.png"
 import Juan from "../assets/Juan.png";
 import Tadeu from "../assets/Tadeu.png";
 import Guedes from "../assets/IsaGuedes.png"
+import Rodrigues from "../assets/IsaRodrigues.png"
+import Ravagnani from "../assets/IsaRavagnani.png"
+import Richard from "../assets/Richard.png"
 
 import '../App.css'
 import '../components/CSS/Home.css'
@@ -64,7 +67,7 @@ const Home = () => {
 
                 <label className="user">
                     <h2>Richard Alves</h2>
-                    <img src={user} alt="" className='foto-user'/>
+                    <img src={Richard} alt="" className='foto-user'/>
                     <p className='funcao'>Developer</p>
                 </label>
 
@@ -76,7 +79,7 @@ const Home = () => {
 
                 <label className="user">
                     <h2>Isabelly Rodrigues</h2>
-                    <img src={user} alt="" className='foto-user'/>
+                    <img src={Rodrigues} alt="" className='foto-user'/>
                     <p className='funcao'>Designer</p>
                 </label>
             </div>
@@ -90,7 +93,7 @@ const Home = () => {
                 
                 <label className="user">
                     <h2>Isabella Ravagnani</h2>
-                    <img src={user} alt="" className='foto-user'/>
+                    <img src={Ravagnani} alt="" className='foto-user'/>
                     <p className='funcao'>Designer</p>
                 </label>
 
